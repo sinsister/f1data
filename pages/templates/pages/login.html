@@ -1,0 +1,89 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'fonts/font.css' %}" />
+    <link rel="stylesheet" href="{% static 'tailwind/style.css' %}">
+    <link rel="stylesheet" href="{% static 'footerApp.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="{% static 'styleForm.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/icons/icon.jpg' %}" type="image/x-icon">
+
+    <title>ورود</title>
+</head>
+
+<body>
+
+    <body class="text-slate-300 overflow-x-hidden">
+        <header-app></header-app>
+        <section class="containLog relative pt-32 pb-80 w-full flex justify-center">
+            <div class="containerFrm container flex flex-col items-center justify-center">
+                <form class="w-80 h-96 z-10">
+                    <div class="ringF absolute border border-solid border-slate-400"></div>
+                    <div class="ringSec absolute border border-solid border-slate-400"></div>
+                    <div class="ringTh absolute border border-solid border-slate-400">
+                    </div>
+                    <div class="headerFrm flex justify-center p-20">
+                        <h1 class="text-large text-slate-300">ورود کاربران</h1>
+                    </div>
+                    <div class="formsLog flex items-center justify-center h-48 flex-col gap-10">
+                        <div class="inpEr flex flex-col rtl">
+                            <div class="inpTit flex flex-col gap-1 rtl">
+                                <span class="titleInp">
+                                    ایمیل*
+                                </span>
+                                <input type="email" inpType="Em"
+                                    class="inpEm transition ease-in-out text-slate-300 w-72 pr-2 text-gray-950 z-10 h-10 rounded-md"
+                                    placeholder="مثلا: userLs@gmail.com"
+                                    oninput="setInputs('inpEm', 'email', 'errorTgEm')">
+                                <span class="errorTgEm h-4 text-rose-800">
+
+                                </span>
+                            </div>
+                        </div>
+                        <div class="inpEr flex flex-col rtl">
+                            <div class="inpTit flex flex-col gap-2 rtl">
+                                <span class="titleInp">
+                                    پسورد*
+                                </span>
+                                <input type="password" inpType="Em"
+                                    class="inpPass transition ease-in-out text-slate-300 w-72 pr-2 text-gray-950 z-10 h-10 rounded-md"
+                                    placeholder="پسورد خود را وارد کنید"
+                                    oninput="setInputs('inpPass', 'password', 'errorTgPass')">
+                                <span class="errorTgPass h-4 text-rose-800">
+
+                                </span>
+                                <span class="errorTgAll h-4 pt-2 text-rose-800">
+
+                                </span>
+                            </div>
+                        </div>
+                        <div class="subInp flex flex-col gap-4">
+                            <input type="button" value="ورود" onclick="loginUser()"
+                                class="subLogin w-72 z-10 transition ease-in-out hover:bg-slate-300 rounded-md hover:text-violet-950 bg-violet-950 h-10">
+                            <div class="registerOpt flex gap-32 items-center">
+                                <a href="/register" class="z-10"><span
+                                        class="text-sm hover:text-rose-500 cursor-pointer z-10">ثبت
+                                        نام</span></a>
+                                <span class="text-sm z-10 cursor-pointer">فراموشی رمز عبور</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+        <footer-app></footer-app>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script type="module" src="{% static 'js/headerComponent.js' %}"></script>
+        <script type="module" src="{% static 'js/footerComponent.js' %}"></script>
+        <script type="module" src="{% static 'js/indexLogin.js' %}"></script>
+    </body>
+</body>
+
+</html>

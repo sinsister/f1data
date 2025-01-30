@@ -1,0 +1,181 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kdl</title>
+    <link rel="stylesheet" href="{% static 'fonts/font.css' %}" />
+    <link rel="stylesheet" href="{% static 'fonts/fontiran.css' %}" />
+    <link rel="stylesheet" href="{% static 'tailwind/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'footerApp.css' %}" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="shortcut icon" href="{% static 'img/icons/icon.jpg' %}" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="text-slate-300 overflow-x-hidden">
+    <div
+      class="backDr justify-center items-center fixed w-full h-full z-30 cursor-pointer"
+    >
+      <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <header-app></header-app>
+    <section class="contKdl mb-40 w-full flex text-center justify-center">
+      <div class="container mb-40 infDr w-full flex">
+        <div class="container flex-col items-center flex">
+          <div class="drivSerach w-full">
+            <div class="SearchForDrivers">
+              <div class="lstSearch max-sm:justify-center max-lg:gap-8 max-sm:gap-2 flex justify-around">
+                <div class="chsRnf max-sm:items-end flex flex-col">
+                  <div
+                    class="cntxDr max-sm:w-32 rounded-md chooseRng flex w-56 h-10 items-center bg-gray-800 border-sloid border-2 border-slate-500 cursor-pointer justify-around"
+                    onclick="chooseType('optSelsC','angleCh')"
+                  >
+                    <span class="typeTit">رویداد</span>
+                    <span class="angleCh transition duration-300 ease-in-out">
+                      <i class="fa fa-angle-up"></i>
+                    </span>
+                  </div>
+                  <div
+                    class="optSelsC z-0 transition opacity-0 ease-in-out flex w-56 flex-col"
+                  >
+                    <span
+                      class="optSlDrivers p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
+                      >مسابقه</span
+                    >
+                  </div>
+                </div>
+                <div class="searchAType max-md:flex-col  flex items-start mb-8 max-xl:gap-32 max-2xl:gap-48 max-lg:gap-8">
+                  <div class="chooseDrvs max-sm:items-start flex flex-col items-center">
+                    <div
+                      class="cntxDr max-sm:w-32 rounded-md chooseRng flex w-56 h-10 items-center bg-gray-800 border-sloid border-2 border-slate-500 cursor-pointer justify-around"
+                      onclick="chooseTypeD('optSelsD','optAngS')"
+                    >
+                      <span class="drvTit">منطقه</span>
+                      <span class="optAngS transition duration-300 ease-in-out">
+                        <i class="fa fa-angle-up"></i>
+                      </span>
+                    </div>
+                    <div
+                      class="optSelsD transition ease-in-out flex w-56 h-48 max-md:max-h-24 overflow-y-scroll flex-col opacity-0 z-0"
+                    ></div>
+                  </div>
+                  <button class="btnSearch hover:transition" disabled>
+                    <div
+                      onclick="searchDrvs()"
+                      class="chooseRng max-sm:w-32 rounded-md flex w-56 hover:bg-slate-950 transition ease-out hover:border-gray-300 h-10 items-center bg-gray-800 border-sloid border-2 border-slate-500 justify-around"
+                    >
+                      <span class="">جست و جو ...</span>
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="driverView w-full flex-col items-center gap-20 flex justify-center"
+          >
+            <div class="topDrView text-large">
+              <h1 class="">لیست راننده ها</h1>
+            </div>
+            <div class="conVeiwDrvs w-full flex justify-center items-center">
+              <div
+                class="containerdrView xl:gap-x-32 lg:gap-x-8 flex justify-center items-center h-50"
+              >
+                <span class="h-full items-center flex"
+                  >لطفا اطلاعات را وارد کنید...</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="showInfDrivers rounded-md w-2/3">
+        <div class="containInf flex items-start justify-around">
+          <div
+            class="rightiDr relative p-6 border border-solid border-slate-700 flex text-center justify-start items-start w-3/7"
+          >
+            <div class="topRDr flex flex-col justify-center items-center gap-6">
+              <div class="topRightDr gap-6 flex flex-col"></div>
+            </div>
+          </div>
+          <div
+            class="leftiDr relative p-11 border border-solid items-center border-slate-700 flex text-center justify-center items-center w-3/5"
+          >
+            <div class="LftD flex items-center flex-col gap-4 h-full">
+              <div class="speedFst h-f flex flex-col gap-3">
+                <div
+                  class="fasterLp bg-neutral-950 p-4 flex justify-between w-52"
+                >
+                  <span class="fstTit">سریعترین دور:</span>
+                  <span class="fstTime">10:15:25</span>
+                </div>
+                <div
+                  class="fasterLp bg-neutral-950 p-4 flex justify-between w-52"
+                >
+                  <span class="fstTit">دلتا:</span>
+                  <span class="fstTime">دور سوم</span>
+                </div>
+                <div
+                  class="fasterLp bg-neutral-950 p-4 flex justify-between w-52"
+                >
+                  <span class="fstTit">میانگین دور ها:</span>
+                  <span class="fstTime">14:28:22</span>
+                </div>
+                <div
+                  class="fasterLp bg-neutral-950 p-4 flex justify-between w-52"
+                >
+                  <span class="fstTit">رتبه در سریع ترین دور:</span>
+                  <span class="fstTime">3</span>
+                </div>
+              </div>
+              <div class="driverLpTm flex">
+                <div
+                  class="lapTimeDriver w-full border border-solid border-slate-700 rounded-md flex flex-col"
+                >
+                  <div
+                    class="headerLpT p-6 rounded w-52 h-14 bg-slate-300 text-slate-950 mb-4 flex items-center justify-center"
+                  >
+                    <h3 class="text-lg text-bold">زمان دور های راننده</h3>
+                  </div>
+                  <div class="LstTimeDriversR flex-flex-col gap-4"></div>
+                </div>
+                <div
+                  class="lapTimeDriver w-full border border-solid border-slate-700 rounded-md flex flex-col"
+                >
+                  <div
+                    class="headerNum p-6 rounded w-full h-14 bg-slate-300 text-slate-950 mb-4 flex items-center justify-center"
+                  >
+                    <h3 class="text-lg w-20 text-bold">شماره ی دور</h3>
+                  </div>
+                  <div class="roundNum flex-flex-col gap-4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer-app></footer-app>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script type="module" src="{% static 'js/headerComponent.js' %}"></script>
+    <script type="module" src="{% static 'js/footerComponent.js' %}"></script>
+    <script src="{% static 'js/indexKdl.js' %}"></script>
+  </body>
+</html>

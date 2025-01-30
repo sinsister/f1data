@@ -1,0 +1,153 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'fonts/font.css' %}" />
+    <link rel="stylesheet" href="{% static 'tailwind/style.css' %}">
+    <link rel="stylesheet" href="{% static 'footerApp.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="{% static 'styleRg.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/icons/icon.jpg' %}" type="image/x-icon">
+    <title>ثبت نام</title>
+</head>
+
+<body class="text-slate-300 overflow-x-hidden">
+    <header-app></header-app>
+    <section class="containLog relative pb-80 w-full flex justify-center">
+        <div class="containerFrm container flex flex-col items-center justify-center">
+            <form class="z-10 rounded-xl p-10 pb-52 frmRg">
+                <div class="headerFrm mb-48 flex justify-center pb-8">
+                    <h1 class="text-large text-slate-300">ثبت نام</h1>
+                </div>
+                <div class="formsLog flex items-center justify-center h-48 flex-col gap-10">
+                    <div class="inpGet grid grid-cols-2 grid-rows-2 w-full gap-10 ">
+                        <div class="inpEr flex flex-col rtl">
+                            <div class="inpTit flex flex-col gap-2 rtl">
+                                <span class="titleInp">
+                                    نام کاربری*
+                                </span>
+                                <input type="text" inpType="us"
+                                    class="inpUser transition ease-in-out text-slate-900 w-72 pr-2 text-gray-950 z-10 h-10 rounded-md"
+                                    placeholder="مثلا: userLs" oninput="setInputs('inpUser', 'username', 'errorTgUs')">
+                            </div>
+                            <span class="errorTgUs h-4 errorTg text-rose-800">
+
+                            </span>
+                        </div>
+                        <div class="inpEr flex flex-col rtl">
+                            <div class="inpTit flex flex-col gap-2 rtl">
+                                <span class="titleInp">
+                                    ایمیل*
+                                </span>
+                                <input type="email" inpType="em"
+                                    class="inpEmail transition ease-in-out text-slate-900 w-72 pr-2 text-gray-950 z-10 h-10 rounded-md"
+                                    placeholder="مثلا: example@gmail.com"
+                                    oninput="setInputs('inpEmail', 'email', 'errorTgEm')">
+                            </div>
+                            <span class="errorTgEm h-4 errorTg text-rose-800">
+
+                            </span>
+                        </div>
+                        <div class="inpEr flex flex-col rtl">
+                            <div class="inpTit flex flex-col gap-2 rtl">
+                                <span class="titleInp">
+                                    رمز عبور*
+                                </span>
+                                <input type="password" inpType="pass"
+                                    class="inpPass transition ease-in-out text-slate-900 w-72 pr-2 text-gray-950 z-10 h-10 rounded-md"
+                                    placeholder="رمز عبور خود را وارد کنید"
+                                    oninput="setInputs('inpPass', 'password1', 'errorTgPass')">
+                            </div>
+                            <span class="errorTgPass text-rose-800">
+
+                            </span>
+                        </div>
+                        <div class="inpEr flex flex-col rtl">
+                            <div class="inpTit flex flex-col gap-2 rtl">
+                                <span class="titleInp">
+                                    تکرار رمز عبور*
+                                </span>
+                                <input type="password" inpType="passR"
+                                    oninput="setInputs('inpPassR', 'password2', 'errorTgPassR')"
+                                    class="inpPassR transition ease-in-out transition ease-in-out text-slate-900 w-72 pr-2 text-gray-950 z-10 h-10 rounded-md"
+                                    placeholder="تکرار رمز عبور">
+                            </div>
+                            <span class="errorTgPassR h-4 text-rose-900">
+
+                            </span>
+                        </div>
+                        <div class="inpEr flex flex-col rtl">
+                            <div class="inpTit flex flex-col gap-2 rtl">
+                                <span class="titleInp">
+                                    نام و نام خانوادگی *
+                                </span>
+                                <input type="text" inpType="fullName"
+                                    class="inpFullNm transition ease-in-out text-slate-900 w-72 pr-2 text-gray-950 z-10 h-10 rounded-md"
+                                    placeholder="نام و نام خانوادگی را وارد کنید"
+                                    oninput="setInputs('inpFullNm','fullname','errorTgFull')">
+                            </div>
+                            <span class="errorTgFull h-4 text-rose-900">
+
+                            </span>
+                        </div>
+                        <div class="inpEr flex flex-col gap-4 rtl">
+                            <div class="inpTit flex flex-col gap-2 rtl">
+                                <span class="titleInp">
+                                    شهر
+                                </span>
+                                <input type="text" inpType="city"
+                                    class="inpCity transition ease-in-out text-slate-900 w-72 pr-2 text-gray-950 z-10 h-10 rounded-md"
+                                    placeholder="مثلا: تهران" oninput="setInputs('inpCity','city','errorTgC')">
+                            </div>
+                            <span class="errorTgC text-rose-900">
+
+                            </span>
+                        </div>
+                    </div>
+                    <div class="vrfOtp flex gap-8 h-40 w-80 items-center justify-around">
+                        <div class="inpRex flex flex-col gap-2 rtl">
+                            <span class="titleInp">
+                                کد امنیتی
+                            </span>
+                            <div class="inpErr flex flex-col h-14">
+                                <input type="text"
+                                    class="inpOtp text-slate-300 w-40 pr-2 text-gray-950 z-10 h-8 rounded-md"
+                                    placeholder="کد امنیتی را وارد کنید"
+                                    oninput="setInputs('inpOtp','captcha','errorTgRec')">
+                                <span class="errorTgRec text-rose-800"></span>
+                            </div>
+                        </div>
+                        <div class="imgChapta flex gap-4 items-center">
+                            <div
+                                class="otpCode h-full w-44 rounded-md bg-slate-700 h-8 flex justify-center items-center">
+                            </div>
+                            <img src="../assets/imgs/reload_prev_ui.png" class="h-full w-8 cursor-pointer"
+                                onclick="recaptcha(true)">
+                        </div>
+
+                    </div>
+                    <div class="subInp flex flex-col gap-4">
+                        <input type="button" value="ثبت نام" disabled
+                            class="subSign w-72 z-10 cursor-pointer transition ease-in-out hover:bg-slate-300 rounded-md hover:text-violet-950 bg-violet-950 h-10">
+                        <div class="registerOpt flex gap-32 items-center">
+                            <a href="/login" class="z-10"><span class="text-sm cursor-pointer z-10">ورود</span></a>
+                            <span class="text-sm cursor-pointer z-10">فراموشی رمز عبور</span>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </section>
+    <footer-app></footer-app>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+<script type="module" src="{% static 'js/headerComponent.js' %}"></script>
+<script type="module" src="{% static 'js/footerComponent.js' %}"></script>
+<script type="module" src="{% static 'js/indexRg.js' %}"></script>
+</html>

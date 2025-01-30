@@ -1,0 +1,7 @@
+cffi
+numpy
+contourpy
+pandas
+pillow
+rpds-py
+scipy

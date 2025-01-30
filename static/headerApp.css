@@ -1,0 +1,158 @@
+.iconN {
+    top: 0;
+}
+
+.kdlOpt {
+    top: 60px;
+}
+
+.responsiveHeader {
+    position: fixed;
+    float: left;
+    display: none;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-182px);
+    z-index: 1;
+    left: 0;
+}
+
+.responsiveHeaderAc {
+    position: fixed;
+    float: left;
+    z-index: 1;
+    display: none;
+    transition: all 0.3s ease-in-out;
+    background-color: rgba(15, 11, 11, 0.733);
+    left: 0;
+}
+
+.topHeader {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 34px;
+    font-size: 2.5em;
+}
+
+.containRes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    background-color: rgba(13, 1, 1, 0.31);
+    padding-bottom: 35px;
+}
+
+.lists a {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.containResAc {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgba(94, 94, 94, 0.26);
+    padding: 10px;
+    padding-bottom: 35px;
+    transition: all 0.3s ease-in-out;
+}
+
+.toggleHeader {
+    cursor: pointer;
+}
+
+.toggleHeader:hover {
+    transition: all 0.3s ease-in-out;
+    color: rgb(19, 163, 163);
+}
+
+.imgTopH {
+    height: 100%;
+    width: 120px;
+    border-radius: 10px;
+}
+
+.listUl {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 38px;
+}
+
+.lists {
+    padding: 20px;
+    width: 220px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    font-size: larger;
+    cursor: pointer;
+    height: 50px;
+}
+
+.lists:hover {
+    color: rgba(13, 1, 1, 0.904);
+    background-color: rgb(177, 177, 177);
+}
+
+
+.iconHeader {
+    font-size: 1.3em;
+}
+
+.angleTurn {
+    transition: all 0.3s ease-in-out;
+    transform: rotate(180deg);
+}
+
+@media(max-width:1150px) {
+    .leftHeader {
+        width: 65%;
+        gap: 52px;
+    
+    }
+
+    .headerOpt {
+        font-size: 12px;
+    }
+}
+
+@media(max-width:950px) {
+    .headerOpt {
+        font-size: 11px;
+    }
+
+    .leftHeader {
+        width: 75%;
+    }
+}
+
+@media(max-width:850px) {
+    .headerOpt {
+        font-size: 9px;
+    }
+
+    .leftHeader {
+        width: 80%;
+        gap: 30px;
+    }
+}
+@media(max-width:600px) {
+    .headerSite {
+        display: none;
+    }
+
+    .responsiveHeader {
+        display: block;
+    }
+
+    .responsiveHeaderAc {
+        display: block;
+    }
+}

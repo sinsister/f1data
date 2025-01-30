@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>خانه</title>
+    <link rel="stylesheet" href="{% static 'fonts/font.css' %}" />
+    <link rel="stylesheet" href="{% static 'fonts/fontiran.css' %}" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="{% static 'styleHome.css' %}" />
+    <link rel="stylesheet" href="{% static 'footerApp.css' %}" />
+    <link rel="shortcut icon" href="{% static 'img/icons/icon.jpg' %}" type="image/x-icon">
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.0.8/lozad.min.js"
+      integrity="sha512-Nt+V5JYamXCSvlHzNVleriGhTrolnfxckJ8sEXxv/BJ0tKV1HyPDXH+bIFNcUJ5hcthQ95uAeU2JClPT16mFyg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/static/imgs/backGrImageHome.jpg" />
+  </head>
+  <body class="text-slate-300">
+    <header-app></header-app>
+    <section
+      class="mainHome gap-40 flex items-center flex-col justify-center w-full h-full"
+    >
+      <div class="container">
+        <div
+          class="topMain flex-col gap-10 flex max-sm:flex-col max-sm:items-center max-sm:gap-10 items-center"
+        >
+          <div class="imgNav w-1/2 h-1/2">
+            <img
+              class="rounded-3xl w-96 shadow-3xl"
+              src="{% static 'imgs/backGrImageHome.jpg' %}"
+              alt=""
+            />
+          </div>
+          <div
+            class="explains text-center rtl text-large w-1/2 flex flex-col gap-20 justify-center items-center"
+          >
+            <h1 class="textHome max-sm:text-center w-80 text-bold">
+              به زودی...
+            </h1>
+            <div class="btnsHk flex max-sm:gap-1 gap-4">
+              <span
+                class="ruleBtn max-md:w-32 flex justify-center items-center w-52 h-14 rounded-full"
+                ><a href="/rules"> قوانین و مقررات </a></span
+              >
+              <span
+                class="aboutBt max-md:w-32 flex justify-center items-center w-52 h-14 rounded-full"
+                ><a href="/about-us">درباره ی ما</a></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="containerSd w-full flex flex-col items-center h-full">
+        <div
+          class="headerMidMai max-sm:w-80 w-2/3 p-4 max-2xl:w-2/3 max-2xl:w-2/3 flex justify-between"
+        >
+          <div class="leftHd flex items-center max-sm:justify-between gap-8 text-3xl">
+            <ion-icon name="logo-rss"></ion-icon>
+            <ion-icon name="pricetag-outline"></ion-icon>
+          </div>
+          <div class="rightHd flex items-center gap-5">
+            <div class="logoSite">
+              <img
+                src="../assets/imgs/logo.png"
+                class="w-28 max-sm:w-20 rounded-md h-full"
+                alt=""
+              />
+            </div>
+            <div class="titleHd">
+              <h3 class="max-sm:text-xs">لیست مسابقات</h3>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mainMidMai max-sm:w-80 border w-2/3 border-solid max-lg:w-2/3 max-xl:w-2/3 max-2xl:w-2/3 max-md:w-2/3 h-full"
+        >
+          <div class="mntS relative h-full gap-20 flex flex-col items-center">
+            <nav
+              onclick="sliderPrev('slider','home')"
+              class="slideLft max-sm:w-20 p-6 cursor-pointer h-full text-6xl left-0 flex items-center absolute"
+            >
+              <ion-icon name="chevron-back-outline"></ion-icon>
+            </nav>
+            <nav
+              onclick="sliderNext('slider','home')"
+              class="slideRight p-6 max-sm:w-20 cursor-pointer h-full text-6xl right-0 flex items-center absolute"
+            >
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </nav>
+            <div class="sliders w-full relative">
+              <div class="backDrSlider opacity-0 absolute h-full w-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="containerBox">
+        <div class="box boxSec" >
+            
+        </div>
+        <div class="box boxWinner">
+            
+        </div>
+        <div class="box boxTh">
+            
+        </div>
+    </div>
+    </section>
+    <footer-app></footer-app>
+    {% comment %} <script>
+      const observe = lozad()
+      observe.observe()
+    </script> {% endcomment %}
+  </body>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
+  <script type="module" src="{% static 'js/headerComponent.js' %}"></script>
+  <script type="module" src="{% static 'js/footerComponent.js' %}"></script>
+  <script src="{% static 'js/indexHome.js' %}"></script>
+  <script src="{% static 'js/indexHeader.js' %}"></script>
+</html>

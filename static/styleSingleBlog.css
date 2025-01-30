@@ -1,0 +1,33 @@
+/* styleSingleBlog.css */
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background: linear-gradient(305deg, rgba(36, 9, 55, 1) 0%, rgba(18, 39, 54, 1) 50%, rgba(0, 0, 0, 1) 100%);
+    direction: rtl;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+    background-color: #000000;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(33, 35, 41, 0.843);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #79591f;
+}
+
+.postSubject {
+    direction: rtl;
+}
+
+.imgBlog {
+    max-width: 1050px;
+}

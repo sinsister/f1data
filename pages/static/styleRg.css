@@ -1,0 +1,91 @@
+body {
+    background: linear-gradient(305deg, rgba(36, 9, 55, 1) 0%, rgba(18, 39, 54, 1) 50%, rgba(0, 0, 0, 1) 100%);
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+    background-color: #000000;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(33, 35, 41, 0.843);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #79591f;
+}
+
+.frmRg {
+    background: rgba(64, 64, 64, 0.26);
+}
+
+.ringTh {
+    right: 408px;
+    width: 535px;
+    height: 741px;
+    top: 0px;
+    z-index: 0;
+    border-radius: 39% 40% 42% 41%;
+    animation: turnAround 6.9s linear infinite;
+    transition: ease-in-out 0.2s all;
+}
+
+.ringF {
+    right: 385px;
+    z-index: 0;
+    width: 655px;
+    height: 741px;
+    top: 0px;
+    border-radius: 39% 40% 42% 41%;
+    animation: turnAround 5.6s linear infinite reverse;
+    transition: ease-in-out 0.2s all;
+}
+
+.ringSec {
+    right: 385px;
+    width: 695px;
+    z-index: 0;
+    height: 741px;
+    top: 0px;
+    border-radius: 39% 40% 42% 41%;
+    animation: turnAround 6.6s linear infinite;
+    transition: ease-in-out 0.2s all;
+}
+
+.inpOtp:focus {
+    outline: none;
+    border: 1px solid gainsboro;
+}
+
+.inpGet input {
+    background-color: #0ff0;
+    border: 1px solid lightslategray;
+    color: rgba(245, 245, 245, 0.801);
+}
+
+.inpGet input:focus {
+    border: 2px solid rgb(116, 139, 216);
+    outline: rgb(10, 8, 8);
+}
+
+.inpOtp {
+    background-color: #0ff0;
+    border: 1px solid lightslategray;
+}
+
+@keyframes turnAround {
+    0% {
+          rotate: 0deg;
+    }
+
+    100% {
+          rotate: 360deg;
+    }
+}
+
+.inpUser,
+.inpPass {
+    background-color: rgb(241, 241, 241);
+}

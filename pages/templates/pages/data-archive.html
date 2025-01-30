@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/fontiran.css' %}" />
+    <link rel="stylesheet" href="{% static 'footerApp.css' %}" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="{% static 'tailwind/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'fonts/font.css' %}" />
+    <title>آرشیو دیتا</title>
+</head>
+<body>
+    <header-app style="color: #fbfbfb;"></header-app>
+    <section class="archive-sec">
+        <div class="sec-container">
+            <div class="cards">
+                <div class="parent-cards card3">
+                    <div class="card">
+                        <div class="photo">
+                            <img src="{% static 'imgs/About us page-pana.svg' %}" alt="SEO">
+                        </div>
+                        <div class="title-page">
+                            <a href="/drivers">تاریخچه گرند پری</a>
+                        </div>
+                        <div class="description">
+                            <p>یشُد همین الان کنارِت بودم و خودمو تو
+                                بغلِت جا میدادم و ازهمه عالم و آدم،پناه میبردم 
+                                ‹به خونـهِ یِ امنَــم!›
+                                سرمو میزاشتم رو سینَت و صدایِ ضربانِ قلبِت میشد لالایی برام که خوابم ببَره...</p>
+                        </div>
+                        <a href="/drivers" class="get-page">رفتن به صفحه</a>
+                    </div>
+                    <div class="card">
+                        <div class="photo">
+                            <img src="{% static 'imgs/About us page-pana.svg' %}" alt="SEO">
+                        </div>
+                        <div class="title-page">
+                            <a href="/information-archive">دیتای رانندگان</a>
+                        </div>
+                        <div class="description">
+                            <p>یشُد همین الان کنارِت بودم و خودمو تو
+                                بغلِت جا میدادم و ازهمه عالم و آدم،پناه میبردم 
+                                ‹به خونـهِ یِ امنَــم!›
+                                سرمو میزاشتم رو سینَت و صدایِ ضربانِ قلبِت میشد لالایی برام که خوابم ببَره...</p>
+                        </div>
+                        <a href="/information-archive" class="get-page">رفتن به صفحه</a>
+                    </div>
+                    <div class="card">
+                        <div class="photo">
+                            <img src="{% static 'imgs/About us page-pana.svg' %}" alt="SEO">
+                        </div>
+                        <div class="title-page">
+                            <a href="/drivers-quality">عملکرد رانندگان</a>
+                        </div>
+                        <div class="description">
+                            <p>یشُد همین الان کنارِت بودم و خودمو تو
+                                بغلِت جا میدادم و ازهمه عالم و آدم،پناه میبردم 
+                                ‹به خونـهِ یِ امنَــم!›
+                                سرمو میزاشتم رو سینَت و صدایِ ضربانِ قلبِت میشد لالایی برام که خوابم ببَره...</p>
+                        </div>
+                        <a href="/drivers-quality" class="get-page">رفتن به صفحه</a>
+                    </div>
+                </div>
+                <div class="parent-cards card2">
+                    <div class="card">
+                        <div class="photo">
+                            <img src="{% static 'imgs/About us page-pana.svg' %}" alt="SEO">
+                        </div>
+                        <div class="title-page">
+                            <a href="/data-page">صفحه دیتا</a>
+                        </div>
+                        <div class="description">
+                            <p>یشُد همین الان کنارِت بودم و خودمو تو
+                                بغلِت جا میدادم و ازهمه عالم و آدم،پناه میبردم 
+                                ‹به خونـهِ یِ امنَــم!›
+                                سرمو میزاشتم رو سینَت و صدایِ ضربانِ قلبِت میشد لالایی برام که خوابم ببَره...</p>
+                        </div>
+                        <a href="/data-page" class="get-page">رفتن به صفحه</a>
+                    </div>
+                    <div class="card">
+                        <div class="photo">
+                            <img src="{% static 'imgs/About us page-pana.svg' %}" alt="SEO">
+                        </div>
+                        <div class="title-page">
+                            <a href="#">نام صفحه</a>
+                        </div>
+                        <div class="description">
+                            <p>یشُد همین الان کنارِت بودم و خودمو تو
+                                بغلِت جا میدادم و ازهمه عالم و آدم،پناه میبردم 
+                                ‹به خونـهِ یِ امنَــم!›
+                                سرمو میزاشتم رو سینَت و صدایِ ضربانِ قلبِت میشد لالایی برام که خوابم ببَره...</p>
+                        </div>
+                        <a href="#" class="get-page">رفتن به صفحه</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer-app style="color: #fbfbfb;"></footer-app>
+    <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
+    <script type="module" src="{% static 'js/headerComponent.js' %}"></script>
+    <script type="module" src="{% static 'js/footerComponent.js' %}"></script>
+    <script src="{% static 'js/indexKbg.js' %}"></script>
+</body>
+</html>

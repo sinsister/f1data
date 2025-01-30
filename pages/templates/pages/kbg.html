@@ -1,0 +1,300 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>عملکرد رانندگان</title>
+    <link rel="stylesheet" href="{% static 'fonts/font.css' %}" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{% static 'fonts/fontiran.css' %}" />
+    <link rel="stylesheet" href="{% static 'tailwind/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'footerApp.css' %}" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="shortcut icon" href="{% static 'img/icons/icon.jpg' %}" type="image/x-icon">
+  </head>
+
+  <body class="text-slate-300 overflow-x-hidden">
+    <header-app></header-app>
+    <div class="drivSerach w-full flex flex-col gap-10">
+      <div class="SearchForDrivers mt-20">
+        <div class="lstSearch flex flex-col items-center justify-around">
+          <div
+            class="searchAT ype max-lg:grid max-lg:grid-cols-2 flex items-start mb-8 gap-5"
+          >
+            <div class="yearOpt flex flex-col">
+              <div
+                class="cntxDr rounded-md chooseRng flex max-sm:w-28 w-56 h-10 items-center bg-gray-800 border-sloid border-2 border-slate-500 cursor-pointer justify-around"
+                onclick="chooseYear('optSelsY','angleChY')"
+              >
+                <span class="typeTitY">سال </span>
+                <span class="angleChY transition duration-300 ease-in-out">
+                  <i class="fa fa-angle-up"></i>
+                </span>
+              </div>
+              <div class="options flex gap-4">
+                <div
+                  class="optSelsY z-0 max-h-48 overflow-y-scroll opacity-0 transition ease-in-out flex w-56 max-sm:w-28 flex-col"
+                >
+                <span
+                    class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
+                    >2024</span
+                  >
+                  <span
+                    class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
+                    >2023</span
+                  >
+                  <span
+                    class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
+                    >2022</span
+                  >
+                  <span
+                    class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
+                    >2021</span
+                  >
+                  <span
+                    class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
+                    >2020</span
+                  >
+                  <span
+                    class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
+                    >2019</span
+                  >
+                  <span
+                    class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
+                    >2018</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="chooseDrvs flex flex-col items-center">
+              <div
+                class="cntxDr max-sm:w-28 rounded-md chooseRng flex w-56 h-10 items-center bg-gray-800 border-sloid border-2 border-slate-500 cursor-pointer justify-around"
+                onclick="chooseGp('optSelsGp','optAngSGp')"
+              >
+                <span class="drvTitGr">منطقه</span>
+                <span class="optAngSGp transition duration-300 ease-in-out">
+                  <i class="fa fa-angle-up"></i>
+                </span>
+              </div>
+              <div
+                class="optSelsGp max-sm:w-28 transition ease-in-out flex w-56 max-h-48 overflow-y-scroll flex-col opacity-0 z-0"
+              ></div>
+            </div>
+            <div class="chooseDrvsFr flex flex-col items-center">
+              <div
+                class="cntxDr max-sm:w-28 rounded-md chooseRng flex w-56 h-10 items-center bg-gray-800 border-sloid border-2 border-slate-500 cursor-pointer justify-around"
+                onclick="chooseDriverFirst('optSelsDrFr','optAngSFr')"
+              >
+                <span class="drvTitFr">راننده ی اول</span>
+                <span class="optAngSFr transition duration-300 ease-in-out">
+                  <i class="fa fa-angle-up"></i>
+                </span>
+              </div>
+              <div
+                class="optSelsDrFr max-sm:w-28 transition ease-in-out flex w-56 h-48 overflow-y-scroll flex-col opacity-0 z-0"
+              ></div>
+            </div>
+            <div class="chooseDrvsSec flex flex-col items-center">
+              <div
+                class="cntxDr max-sm:w-28 rounded-md chooseRng flex w-56 h-10 items-center bg-gray-800 border-sloid border-2 border-slate-500 cursor-pointer justify-around"
+                onclick="chooseDriverSec('optSelsDrSec','optAngDrvSec')"
+              >
+                <span class="drvTitSec">راننده ی دوم</span>
+                <span class="optAngDrvSec transition duration-300 ease-in-out">
+                  <i class="fa fa-angle-up"></i>
+                </span>
+              </div>
+              <div
+                class="optSelsDrSec max-sm:w-28 transition ease-in-out flex w-56 h-48 overflow-y-scroll flex-col opacity-0 z-0"
+              ></div>
+            </div>
+          </div>
+          <div class="searchBtn">
+            <button class="btnSearch hover:transition" onclick="searchDrv()">
+              <div
+                class="chooseRng rounded-md flex w-56 hover:bg-slate-950 transition ease-out hover:border-gray-300 h-10 items-center bg-gray-800 border-sloid border-2 border-slate-500 justify-around"
+              >
+                <span class="">جست و جو ...</span>
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="tableIn w-full flex flex-col justify-center items-center">
+        <div class="headTbl w-2/3 max-sm:w-full flex">
+          <span
+            class="roundTit max-sm:text-xs text-center flex items-center justify-center border border-slate-400 w-1/4 h-12"
+            >دور</span
+          >
+          <span
+            class="drvFrNameTit max-sm:text-xs text-center flex items-center justify-center border border-slate-400 w-1/4 h-12"
+            >راننده اول</span
+          >
+          <span
+            class="drvSecNameTit max-sm:text-xs text-center flex items-center justify-center border border-slate-400 w-1/4 h-12"
+            >راننده دوم</span
+          >
+          <span
+            class="drvSecNameTit max-sm:text-xs text-center flex items-center justify-center border border-slate-400 w-1/4 h-12"
+            >اختلاف</span
+          >
+        </div>
+        <div class="w-2/3 max-sm:w-full flex">
+          <div
+            class="drvNum max-sm:text-xs text-center flex flex-col border-slate-400 items-center border-b-2 justify-center w-1/4 h-full"
+          ></div>
+          <div
+            class="drvFrName max-sm:text-xs text-center flex flex-col items-center justify-center border border-slate-400 w-1/4 h-full"
+          ></div>
+          <div
+            class="drvSecName max-sm:text-xs text-center flex flex-col items-center justify-center border border-slate-400 w-1/4 h-full"
+          ></div>
+          <div
+            class="drvsMinus max-sm:text-xs text-center flex flex-col items-center justify-center border border-slate-400 w-1/4 h-full"
+          ></div>
+        </div>
+      </div>
+      <div class="infLa items-center flex flex-col gap-8">
+        <div class="headInfLa border-b border-b-slate-400">
+          <h2 class="text-bold text-2xl p-8">اطلاعات تکمیلی</h2>
+        </div>
+        <div class="mainSec max-sm:items-center flex flex-col gap-8">
+          <div
+            class="topInf max-sm:grid max-sm:grid-cols-2 max-sm:gap-2 flex justify-between"
+          >
+            <div
+              class="totalRnd max-sm:w-32 max-sm:h-32 w-40 h-40 justify-around flex flex-col g-slate-50 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5"
+            >
+              <div class="headerT">
+                <h2 class="text-bold max-sm:text-sm text-center text-xl">
+                  تعداد دور ها
+                </h2>
+              </div>
+              <div class="mainT max-sm:text-xs text-center">
+                اطلاعاتی موجود نیست
+              </div>
+            </div>
+            <div
+              class="betterTime max-sm:w-32 max-sm:h-32 w-40 h-40 justify-around flex flex-col g-slate-50 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5"
+            >
+              <div class="headerT">
+                <h2 class="text-bold max-sm:text-sm text-center text-xl">
+                  بهترین دور
+                </h2>
+              </div>
+              <div class="mainBest max-sm:text-xs text-center">
+                اطلاعاتی موجود نیست
+              </div>
+            </div>
+            <div
+              class="worseTimes max-sm:w-32 max-sm:h-32 w-40 h-40 justify-around flex flex-col g-slate-50 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5"
+            >
+              <div class="headerT">
+                <h2 class="text-bold max-sm:text-sm text-center text-xl">
+                  بدترین دور
+                </h2>
+              </div>
+              <div class="mainWorse max-sm:text-xs text-center">
+                اطلاعاتی موجود نیست
+              </div>
+            </div>
+          </div>
+          <div class="btmInf grid gap-4 grid-cols-2">
+            <div
+              class="drvFrAvgOne max-sm:w-32 max-sm:h-32 h-40 justify-around flex flex-col g-slate-50 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5"
+            >
+              <div class="headerT">
+                <h2 class="text-bold max-sm:text-sm text-center text-xl">
+                  میانگین دور های راننده اول
+                </h2>
+              </div>
+              <div class="mainAvgFr max-sm:text-xs text-center">
+                اطلاعاتی موجود نیست
+              </div>
+            </div>
+            <div
+              class="drvFrAvgTwo max-sm:w-32 max-sm:h-32 h-40 justify-around flex flex-col g-slate-50 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5"
+            >
+              <div class="headerT">
+                <h2 class="text-bold max-sm:text-sm text-center text-xl">
+                  میانگین دور های راننده دوم
+                </h2>
+              </div>
+              <div class="mainAvgSec max-sm:text-xs text-center">
+                اطلاعاتی موجود نیست
+              </div>
+            </div>
+            <div
+              class="drvFrAvgTwo max-sm:w-32 max-sm:h-32 h-40 justify-around flex flex-col g-slate-50 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5"
+            >
+              <div class="headerT">
+                <h2 class="text-bold max-sm:text-sm text-center text-xl">
+                  سریعترین دور راننده اول
+                </h2>
+              </div>
+              <div class="mainFastFr max-sm:text-xs text-center">
+                اطلاعاتی موجود نیست
+              </div>
+            </div>
+            <div
+              class="drvFrAvgTwo max-sm:w-32 max-sm:h-32 h-40 justify-around flex flex-col g-slate-50 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5"
+            >
+              <div class="headerT">
+                <h2 class="text-bold max-sm:text-sm text-center text-xl">
+                  سریعترین دور راننده دوم
+                </h2>
+              </div>
+              <div class="mainFastSec max-sm:text-xs text-center">
+                اطلاعاتی موجود نیست
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer-app></footer-app>
+    <style>
+      @media (max-width: 640px) {
+        .drvTitFr {
+          font-size: 13px;
+        }
+        .drvTitGr {
+          font-size: 13px;
+        }
+        .drvTitSec {
+          font-size: 13px;
+        }
+        .optSlYf {
+          font-size: 11px;
+        }
+        .optSlDrF {
+          font-size: 11px;
+        }
+        .optSlDrSec {
+          font-size: 11px;
+        }
+        .typeTitY {
+          font-size: 13px;
+        }
+        .optSlDriversY {
+          font-size: 13px;
+        }
+      }
+    </style>
+  </body>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
+  <script type="module" src="{% static 'js/headerComponent.js' %}"></script>
+  <script type="module" src="{% static 'js/footerComponent.js' %}"></script>
+  <script src="{% static 'js/indexKbg.js' %}"></script>
+</html>

@@ -1,0 +1,39 @@
+@import url("/assets/static/fonts/fontiran.css");
+
+@font-face {  
+    font-family: 'BBCNassim';  
+    src: url( ../fonts/BBCNassim.TTF );
+    src: local("BBCNassim"), url("../fonts/BBCNassim.TTF") format("truetype");  
+}
+
+
+@font-face {
+    font-family: Vazirmatn;
+    src: url("/assets/fonts/fonts/webfonts/Vazirmatn[wght].woff"); 
+}
+
+
+@font-face {
+    font-family: Vazirmatn;
+    src: url( ../fonts/BBCNassim.TTF );
+    src: local("BBCNassim"), url("../fonts/BBCNassim.TTF") format("truetype");  
+}
+@font-face {
+    font-family: B-Nazanin;
+    src: url("/assets/fonts/fonts/B-NAZANIN.TTF"); 
+}
+@font-face {
+    font-family: B-Nazanin;
+    src: url( ../fonts/B-NAZANIN.TTF );
+    src: local("B-NAZANIN"), url("../fonts/B-NAZANIN.TTF") format("truetype");  
+}
+
+@font-face {
+    font-family: Tabssom;
+    src: url("/assets/tabasomFont/fonts/Tabssom.ttf"); 
+}
+@font-face {
+    font-family: Tabssom;
+    src: url(../tabasomFont/fonts/Tabssom.ttf);
+    src: local("Tabssom"), url("../tabasomFont/fonts/Tabssom.ttf") format("truetype");  
+}

@@ -1,0 +1,9 @@
+@import url(fontiran.css);
+
+body {
+      direction: rtl;
+}
+
+p {
+      font-family: IRANSansX !important;
+}

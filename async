@@ -1,0 +1,325 @@
+[33mcommit 6a4d4c62395a9c57bd3b4bd45599d5ea979bf3fa[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: masin <masin@gmail.com>
+Date:   Tue Apr 30 04:10:39 2024 -0700
+
+    i always come back
+
+[33mcommit 54880832e24dacf1060dd6facfa7a932cc4dcd8b[m
+Author: masin <masin@gmail.com>
+Date:   Tue Apr 30 04:05:57 2024 -0700
+
+    i always come back
+
+[33mcommit 96dde88016092597654d9053ed16fc4ac07b4632[m
+Author: masin <masin@gmail.com>
+Date:   Tue Apr 30 03:56:14 2024 -0700
+
+    ma bargashtim
+
+[33mcommit 17b25def244b2fcdf3847223dcfff9a394539b3e[m
+Author: masin <masin@gmail.com>
+Date:   Fri Apr 26 14:40:47 2024 +0330
+
+    update
+
+[33mcommit 26cc35e6008813cf7453844e54089148fd0f4e77[m
+Author: masin <masin@gmail.com>
+Date:   Fri Apr 19 11:48:25 2024 +0330
+
+    fix kdc
+
+[33mcommit 7d1a3139f9a6fdd7370982176aff4f0d39c3b706[m
+Author: masin <masin@gmail.com>
+Date:   Tue Apr 16 17:03:11 2024 +0330
+
+    fic kdc
+
+[33mcommit f3b1c26d4e6e6138797d8fc471b3bbc4f2567494[m
+Author: masin <masin@gmail.com>
+Date:   Tue Apr 16 16:52:31 2024 +0330
+
+    fix kdc
+
+[33mcommit 7b722f35a1814969f1a1bb7bb1cbd7b9707eaaa1[m
+Author: masin <masin@gmail.com>
+Date:   Thu Apr 11 20:30:16 2024 +0330
+
+    add slider
+
+[33mcommit 3eb8248c516ff1c8187205f8abfa5d8ab7c48c9b[m
+Author: masin <masin@gmail.com>
+Date:   Fri Apr 5 22:58:34 2024 +0330
+
+    add pay html
+
+[33mcommit 7c5fbefc028021b1fd34a3fdffa78d1c1d7c7d55[m
+Author: masin <masin@gmail.com>
+Date:   Fri Apr 5 12:30:10 2024 +0330
+
+    fix year
+
+[33mcommit ea30b7574978a9ccd94c633af9e5c62b01a6aaa5[m
+Author: zparto <zparto82@gmail.com>
+Date:   Fri Apr 5 04:40:39 2024 +0330
+
+    add new api support
+
+[33mcommit 40aaba1ddc7b1166ed9f34b01e06e563c01b3822[m
+Author: zparto <zparto82@gmail.com>
+Date:   Fri Apr 5 04:35:03 2024 +0330
+
+    debug
+
+[33mcommit a94c38fe44f71e417127f28edb8e18e0bea2f059[m
+Author: zparto <zparto82@gmail.com>
+Date:   Fri Apr 5 04:29:28 2024 +0330
+
+    debug
+
+[33mcommit 65525a43b854474a7c524014418c6c8f86757ce9[m
+Author: zparto <zparto82@gmail.com>
+Date:   Fri Apr 5 04:24:41 2024 +0330
+
+    reusable the cache
+
+[33mcommit a0e7416cf570f099be1cf2c4e0fc8df3a28a30e2[m
+Author: zparto <zparto82@gmail.com>
+Date:   Fri Apr 5 04:24:12 2024 +0330
+
+    add cache for view
+
+[33mcommit 4b508c435e113b5c437d72f046deaa50148ae42e[m
+Author: zparto <zparto82@gmail.com>
+Date:   Fri Apr 5 04:23:19 2024 +0330
+
+    translate model
+
+[33mcommit d03e58767be69bd78ebce53696126ce816fec04a[m
+Author: zparto <zparto82@gmail.com>
+Date:   Fri Apr 5 02:32:09 2024 +0330
+
+    add support for new api
+
+[33mcommit 37e324c29ae667fab559e06091730e4dd27c4a83[m
+Author: zparto <zparto82@gmail.com>
+Date:   Fri Apr 5 01:11:21 2024 +0330
+
+    add settings for fastest model
+
+[33mcommit c0013384922bc8d42a1360511f08e60fb7af2d3f[m
+Author: zparto <zparto82@gmail.com>
+Date:   Fri Apr 5 00:49:34 2024 +0330
+
+    debug error get return more than 1 item
+
+[33mcommit 7b908d6bad3b786ab6f68492aa270e51dcbfd0ac[m
+Author: zparto <zparto82@gmail.com>
+Date:   Fri Apr 5 00:36:40 2024 +0330
+
+    add fastest to admin panel
+
+[33mcommit 71c78cca060cd14fc602957b006725eaf26c1a34[m
+Author: zparto <zparto82@gmail.com>
+Date:   Thu Apr 4 22:31:17 2024 +0330
+
+    add not found exceptions
+
+[33mcommit 66883f13a4892379689d8654340fd19ccdd3a724[m
+Author: zparto <zparto82@gmail.com>
+Date:   Thu Apr 4 22:12:59 2024 +0330
+
+    add driver field to FastestModel
+
+[33mcommit 86b3687f4bbd2ae7d0f53ad7630823c4b916c505[m
+Author: zparto <zparto82@gmail.com>
+Date:   Thu Apr 4 21:24:44 2024 +0330
+
+    debug and add custom models and ...
+
+[33mcommit 4bdc0304008d5ce18c1e8d55eb2c7f49a7d92938[m
+Author: zparto <zparto82@gmail.com>
+Date:   Thu Apr 4 21:22:08 2024 +0330
+
+    add position model and debug
+
+[33mcommit d2afbc1dafea792de57b37c2d28dda90cbe49292[m
+Author: zparto <zparto82@gmail.com>
+Date:   Thu Apr 4 21:20:48 2024 +0330
+
+    add custom bad request exception
+
+[33mcommit 027ff6a64cdc74ba33cae324d4a0c226def8057c[m
+Author: zparto <zparto82@gmail.com>
+Date:   Sun Mar 31 23:42:51 2024 +0330
+
+    add news
+
+[33mcommit 855353c5b040e72b511a715b4d6d62e39247b71e[m
+Author: masin <you@example.com>
+Date:   Fri Mar 29 10:03:20 2024 -0400
+
+    cmpt dp
+
+[33mcommit aba27b581747d25e1f0943d57651712addc916e2[m
+Author: masin <you@example.com>
+Date:   Fri Mar 29 10:00:56 2024 -0400
+
+    cmpt dp
+
+[33mcommit 8944753ac838470042d96a6deb2c25ccbd58b202[m
+Author: masin <you@example.com>
+Date:   Fri Mar 29 09:58:18 2024 -0400
+
+    cmpt dp
+
+[33mcommit 8d2ac10abb5947b8fa5e657b87f00854cbefd795[m
+Author: masin <you@example.com>
+Date:   Fri Mar 29 09:52:39 2024 -0400
+
+    cmpt dp
+
+[33mcommit 8d3462ba0db0cd86fb0e4521868afcd2f1e672b0[m
+Author: Morteza Ali Soleimani <coderboy73@gmail.com>
+Date:   Fri Mar 29 10:20:13 2024 +0000
+
+    data page fixed
+
+[33mcommit 220af8fb94b1cd2a949081f443e039212ec1b08e[m
+Author: masin <you@example.com>
+Date:   Tue Mar 26 13:53:30 2024 -0400
+
+    cmpt dp
+
+[33mcommit a0e413f13e9665c7fd9edadca6f45e05276edc53[m
+Author: masin <you@example.com>
+Date:   Tue Mar 26 13:49:52 2024 -0400
+
+    img
+
+[33mcommit d8bc969cee9a965d49dea50177e423a553145a2e[m
+Author: masin <you@example.com>
+Date:   Tue Mar 26 13:48:27 2024 -0400
+
+    cmpt dp
+
+[33mcommit ca94bfe07ef1ad25d4b00e5b19d028adf9dd6a6b[m
+Author: masin <you@example.com>
+Date:   Tue Mar 26 13:45:51 2024 -0400
+
+    cmpt dp
+
+[33mcommit 043e07937ffb56825acd7e441617f84f66d85107[m
+Author: masin <you@example.com>
+Date:   Tue Mar 26 13:43:08 2024 -0400
+
+    cmpt dp
+
+[33mcommit 433279bfda823a06041d98099f1aa811575957c3[m
+Author: masin <you@example.com>
+Date:   Tue Mar 26 13:40:08 2024 -0400
+
+    cmpt dp
+
+[33mcommit 22b6e99f370646ecf77822c17029a671a60ec874[m
+Author: masin <you@example.com>
+Date:   Tue Mar 26 06:42:12 2024 -0400
+
+    cmpt dp
+
+[33mcommit 5fa59d894fb58bda8677d4bb988d2345f91b23ed[m
+Author: masin <you@example.com>
+Date:   Tue Mar 26 06:34:25 2024 -0400
+
+    cmpt dp
+
+[33mcommit b3179d0e6f21c2da044db060a6d0d589343eb278[m
+Author: masin <you@example.com>
+Date:   Tue Mar 26 06:28:12 2024 -0400
+
+    cmpt dp
+
+[33mcommit 4e27b58126722903cda1b8856803836281dba3ee[m
+Author: masin <you@example.com>
+Date:   Tue Mar 26 06:20:14 2024 -0400
+
+    cmpt dp
+
+[33mcommit 844c2d3e9b1e9dfbeb2ccdad8da2534f2de5b16d[m
+Author: masin <you@example.com>
+Date:   Tue Mar 26 06:12:03 2024 -0400
+
+    cmpt dp
+
+[33mcommit 64dd7e386ef36242e6abac1d2164b0b57c970c5e[m
+Author: Morteza Ali Soleimani <coderboy73@gmail.com>
+Date:   Tue Mar 26 09:06:51 2024 +0000
+
+    data page completed
+
+[33mcommit 8f70e79d3f1c82fec289404658e55295699f0e10[m
+Author: Morteza Ali Soleimani <coderboy73@gmail.com>
+Date:   Tue Mar 26 08:05:08 2024 +0000
+
+    bugs fixed
+
+[33mcommit d6641f282ae5f5a72d5b1d44676a9577f32eaca7[m
+Author: masin <you@example.com>
+Date:   Tue Mar 26 03:53:32 2024 -0400
+
+    img loading
+
+[33mcommit 8dc374a5d4fb3c9dc283da9a9271fc962b62550d[m
+Author: masin <you@example.com>
+Date:   Mon Mar 25 13:09:15 2024 -0400
+
+    add cmpt folder
+
+[33mcommit 7798c7fbd24408b1a053bfa565a694a21f86e7b6[m
+Author: masin <you@example.com>
+Date:   Mon Mar 25 13:07:25 2024 -0400
+
+    add cmpt folder
+
+[33mcommit d26ad3e64556c5b836c1977124ddb259daa779d6[m
+Author: masin <you@example.com>
+Date:   Mon Mar 25 13:03:08 2024 -0400
+
+    add cmpt folder
+
+[33mcommit 9d98aa9c8dd61b632f879eaf5dadd0ed78d67a00[m
+Author: masin <you@example.com>
+Date:   Mon Mar 25 12:59:25 2024 -0400
+
+    add cmpt folder
+
+[33mcommit 9965e5aca51dd1aa74b2fcfaa7485e11a3fde562[m
+Author: masin <you@example.com>
+Date:   Mon Mar 25 07:43:43 2024 -0400
+
+    add cmpt folder
+
+[33mcommit 0482fcbe8cc8bbcb773f7122db9d656459cbca98[m
+Author: masin <you@example.com>
+Date:   Mon Mar 25 07:38:56 2024 -0400
+
+    add cmpt folder
+
+[33mcommit b71026791265b0d3e5e97c2b7a69df43feaeed86[m
+Author: masin <you@example.com>
+Date:   Mon Mar 25 07:33:01 2024 -0400
+
+    add cmpt folder
+
+[33mcommit 46721bd59fbbda198457e0ff3c857e49b0933c71[m
+Author: masin <you@example.com>
+Date:   Mon Mar 25 07:21:53 2024 -0400
+
+    add cmpt folder
+
+[33mcommit d0546fd3be7e62807d72fd4202fd9b129dfff733[m
+Author: masin <you@example.com>
+Date:   Mon Mar 25 07:16:42 2024 -0400
+
+    add cmpt folder
+
+[33mcommit d9bee10fa64d9e453748b

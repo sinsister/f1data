@@ -1,0 +1,15 @@
+﻿@import url(fontiran.css);
+
+h1,
+h2,
+h3,
+h4,
+h6,
+li,
+p,
+span,
+table {
+	font-family: morabba !important;
+	direction: rtl;
+	margin: 0;
+}

@@ -1,0 +1,117 @@
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: linear-gradient(305deg, rgba(36, 9, 55, 1) 0%, rgba(18, 39, 54, 1) 50%, rgba(0, 0, 0, 1) 100%);
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: #000000;
+  overflow-x: hidden;
+}
+li{
+  list-style: none;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(33, 35, 41, 0.843);
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #79591f;
+}
+
+.showInfDrivers {
+  display: none;
+}
+
+.backDr {
+  background-color: rgba(20, 6, 6, 0.555);
+  display: none;
+}
+
+.loader {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(77.28deg,
+      rgba(82, 225, 226, 1) 2.24%,
+      rgba(157, 77, 196, 1) 104.45%);
+  animation: animate 0.5s linear infinite;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.loader span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(77.28deg,
+      rgba(82, 225, 226, 1) 2.24%,
+      rgba(157, 77, 196, 1) 104.45%);
+  animation: animate 0.5s linear infinite;
+}
+
+.loader span:nth-child(1) {
+  filter: blur(5px);
+}
+
+.loader span:nth-child(2) {
+  filter: blur(10px);
+}
+
+.loader span:nth-child(3) {
+  filter: blur(25px);
+}
+
+.loader span:nth-child(4) {
+  filter: blur(50px);
+}
+
+.loader::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  background-image: url("./imgs/wheel.jpg");
+  border-radius: 50%;
+  background-size: cover;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.turnAr {
+  transform: rotate(180deg);
+  animation-iteration-count: infinite;
+}
+
+.searchLoading {
+  border-radius: 50%;
+  background-image: url('./imgs/loading.png');
+  background-repeat: no-repeat;
+  animation: animate 0.3s linear infinite;
+}
+
+.backDrShow {
+  background-color: rgba(2, 1, 0, 0.63);
+  position: fixed;
+  width: 1800px;
+  height: 850px;
+  z-index: 20;
+}

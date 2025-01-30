@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>پخش زنده</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="{% static 'footerApp.css' %}" />
+    <link rel="stylesheet" href="{% static 'headerApp.css' %}" />
+    <link rel="shortcut icon" href="{% static 'img/icons/icon.jpg' %}" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="shortcut icon"
+      href="{% static 'img/icons/icon.jpg}"
+      type="image/x-icon"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.0.8/lozad.min.js"
+      integrity="sha512-Nt+V5JYamXCSvlHzNVleriGhTrolnfxckJ8sEXxv/BJ0tKV1HyPDXH+bIFNcUJ5hcthQ95uAeU2JClPT16mFyg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="{% static 'fontMorabaa/style.css' %}" />
+  </head>
+  <body class="text-slate-300 rtl overflow-x-hidden">
+    <header-app></header-app>
+    <section class="w-full flex text-center justify-center">
+      <div class="container w-full flex flex-col gap-8">
+        <div class="topCont w-full border-b-solid border-b pb-8 border-b-slate-400">
+          <div class="headerAbTit">
+            <h1 class="text-2xl pr-5">پخش زنده</h1>
+          </div>
+        </div>
+        <iframe
+          src="
+      https://wikisport.se/embed/skyf1.php
+      "
+          allowfullscreen="true"
+          frameborder="0"
+          height="550"
+          scrolling="no"
+          width="100%"
+        ></iframe>
+      </div>
+    </section>
+    <footer-app></footer-app>
+  </body>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
+  <script type="module" src="{% static 'js/headerComponent.js' %}"></script>
+  <script type="module" src="{% static 'js/footerComponent.js' %}"></script>
+</html>

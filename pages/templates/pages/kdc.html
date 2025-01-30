@@ -1,0 +1,254 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>رانندگان</title>
+    <link rel="stylesheet" href="{% static 'fonts/font.css' %}" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{% static 'tailwind/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'footerApp.css' %}" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="shortcut icon" href="{% static 'img/icons/icon.jpg' %}" type="image/x-icon">
+  </head>
+
+  <body class="text-slate-300 overflow-x-hidden">
+    <div
+      class="backDr justify-center items-center fixed w-full h-full z-30 cursor-pointer"
+    >
+      <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <header-app></header-app>
+    <section class="contKdl mb-40 max-xl:flex-col-reverse w-full flex text-center justify-center">
+      <div class="container mb-40 infDr w-full flex">
+        <div class="container flex-col items-center flex">
+          <div class="drivSerach w-full">
+            <div class="SearchForDrivers">
+              <div class="lstSearch flex max-lg:items-center max-lg:flex-col max-lg:gap-2 justify-around">
+                <div class="chsRnf flex flex-col">
+                  <div class="rightZb flex gap-4">
+                    <div
+                      class="cntxDr rounded-md chooseRng flex max-sm:w-32 w-56 h-10 items-center bg-gray-800 border-sloid border-2 border-slate-500 cursor-pointer justify-around"
+                      onclick="chooseYear('optSelsY','angleChY')"
+                    >
+                      <span class="typeTitY">سال </span>
+                      <span
+                        class="angleChY transition duration-300 ease-in-out"
+                      >
+                        <i class="fa fa-angle-up"></i>
+                      </span>
+                    </div>
+                    <div
+                      class="cntxDr rounded-md max-sm:w-32 chooseRng flex w-56 h-10 items-center bg-gray-800 border-sloid border-2 border-slate-500 cursor-pointer justify-around"
+                      onclick="chooseTypeD('optSelsD','optAngS')"
+                    >
+                      <span class="drvTitGr">منطقه</span>
+                      <span class="optAngS transition duration-300 ease-in-out">
+                        <i class="fa fa-angle-up"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="options flex gap-4">
+                    <div
+                      class="optSelsY flex-col max-sm:w-32 max-lg:flex-col z-0 opacity-0 transition ease-in-out flex w-56 max-lg:h-40 max-lg:overflow-scroll flex-col"
+                    >
+                    <span
+                        class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
+                        >2024</span
+                      >
+                      <span
+                        class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
+                        >2023</span
+                      >
+                      <span
+                        class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
+                        >2022</span
+                      >
+                      <span
+                        class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
+                        >2021</span
+                      >
+                      <span
+                        class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
+                        >2020</span
+                      >
+                      <span
+                        class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
+                        >2019</span
+                      >
+                      <span
+                        class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
+                        >2018</span
+                      >
+                    </div>
+                    <div
+                      class="optSelsD max-sm:w-32 transition ease-in-out flex w-56 h-48 overflow-y-scroll flex-col opacity-0 z-0"
+                    ></div>
+                  </div>
+                </div>
+                <div class="searchAType flex items-start mb-8 gap-4">
+                  <div class="chooseDrvs flex flex-col items-center">
+                    <div
+                      class="cntxDr max-sm:w-32 rounded-md chooseRng flex w-56 h-10 items-center bg-gray-800 border-sloid border-2 border-slate-500 cursor-pointer justify-around"
+                      onclick="chooseType('optSelsC','angleCh')"
+                    >
+                      <span class="typeTit">رویداد</span>
+                      <span class="angleCh transition duration-300 ease-in-out">
+                        <i class="fa fa-angle-up"></i>
+                      </span>
+                    </div>
+                    <div
+                      class="optSelsC max-sm:w-32 opacity-0 z-0 transition ease-in-out flex w-56 flex-col"
+                    ></div>
+                  </div>
+                  <button class="btnSearch hover:transition" disabled>
+                    <div
+                      onclick="searchDrvs()"
+                      class="chooseRng max-sm:w-32 rounded-md flex w-56 hover:bg-slate-950 transition ease-out hover:border-gray-300 h-10 items-center bg-gray-800 border-sloid border-2 border-slate-500 justify-around"
+                    >
+                      <span class="">جست و جو ...</span>
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="driverView w-full flex-col items-center gap-20 flex justify-start"
+          >
+            <div class="topDrView text-large">
+              <h1 class="">لیست راننده ها</h1>
+            </div>
+            <div
+              class="containerdrView  flex justify-center items-center h-50"
+            >
+              <span class="h-full items-center flex"
+                >لطفا اطلاعات را وارد کنید...</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="showInfDrivers rounded-md w-2/3 max-xl:w-full">
+        <div class="cntDrv flex flex-col gap-4">
+          <div
+            class="containInf rounded-md max-sm:flex-col max-sm:items-center flex items-start ml-4 border border-solid border-slate-600"
+          >
+            <div
+              class="rightiDr relative p-11 flex text-center justify-center w-1/2"
+            >
+              <div
+                class="topRDr flex flex-col justify-center items-center gap-6"
+              >
+                <div class="topRightDr max-sm:items-center max-sm:gap-16 gap-6 flex flex-col"></div>
+              </div>
+            </div>
+            <div class="leftiDr p-11">
+              <div class="LftD flex flex-col gap-4 h-full">
+                <div class="speedFst h-f flex flex-col gap-3">
+                  <div
+                    class="fasterLp bg-neutral-950 p-4 flex justify-between w-52"
+                  >
+                    <span class="fstTit">سریعترین دور:</span>
+                    <span class="fstTime">10:15:25</span>
+                  </div>
+                  <div
+                    class="fasterLp bg-neutral-950 p-4 flex justify-between w-52"
+                  >
+                    <span class="fstTit">دلتا:</span>
+                    <span class="fstTime">دور سوم</span>
+                  </div>
+                  <div
+                    class="fasterLp bg-neutral-950 p-4 flex justify-between w-52"
+                  >
+                    <span class="fstTit">میانگین دور ها:</span>
+                    <span class="fstTime">14:28:22</span>
+                  </div>
+                  <div
+                    class="fasterLp bg-neutral-950 p-4 flex justify-between w-52"
+                  >
+                    <span class="fstTit">رتبه در سریع ترین دور:</span>
+                    <span class="fstTime"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btmcntDrv max-sm:justify-center flex gap-4 max-sm:gap-0 max-sm:pl-0 pl-4">
+            <div
+              class="lapTimeDriver max-sm:w-12 w-1/5 border border-solid border-slate-700 rounded-md flex flex-col"
+            >
+              <div
+                class="headerLpT max-sm:p-0 p-6 rounded w-full h-14 bg-slate-300 text-slate-950 mb-4 flex items-center justify-center"
+              >
+                <h3 class="text-lg max-sm:text-xs text-bold">سکتور سه</h3>
+              </div>
+              <div class="sectorTh flex-flex-col gap-4"></div>
+            </div>
+
+            <div
+              class="lapTimeDriver max-sm:w-12 w-1/5 border border-solid border-slate-700 rounded-md flex flex-col"
+            >
+              <div
+                class="headerLpT p-6 max-sm:p-0 rounded w-full h-14 bg-slate-300 text-slate-950 mb-4 flex items-center justify-center"
+              >
+                <h3 class="text-lg max-sm:text-xs text-bold">سکتور دو</h3>
+              </div>
+              <div class="sectorSec flex-flex-col gap-4"></div>
+            </div>
+            <div
+              class="lapTimeDriver max-sm:w-12 w-1/5 border border-solid border-slate-700 rounded-md flex flex-col"
+            >
+              <div
+                class="headerLpT p-6 max-sm:p-0 rounded w-full h-14 bg-slate-300 text-slate-950 mb-4 flex items-center justify-center"
+              >
+                <h3 class="text-lg max-sm:text-xs text-bold">سکتور یک</h3>
+              </div>
+              <div class="sectorF flex-flex-col gap-4"></div>
+            </div>
+            <div
+              class="lapTimeDriver max-sm:w-12 w-1/5 border border-solid border-slate-700 rounded-md flex flex-col"
+            >
+              <div
+                class="headerLpT p-6 max-sm:p-0 rounded w-full h-14 bg-slate-300 text-slate-950 mb-4 flex items-center justify-center"
+              >
+                <h3 class="text-lg max-sm:text-xs text-bold">زمان دور ها</h3>
+              </div>
+              <div class="lapTime flex-flex-col gap-4"></div>
+            </div>
+            <div
+              class="roundDriver max-sm:w-12 w-1/5 border border-solid border-slate-700 rounded-md flex flex-col"
+            >
+              <div
+                class="headerLpT max-sm:p-0 p-6 rounded w-full h-14 bg-slate-300 text-slate-950 mb-4 flex items-center justify-center"
+              >
+                <h3 class="text-lg max-sm:text-xs text-bold">شماره دور</h3>
+              </div>
+              <div class="roundNum flex-flex-col gap-4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer-app></footer-app>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script type="module" src="{% static 'js/headerComponent.js' %}"></script>
+    <script type="module" src="{% static 'js/footerComponent.js' %}"></script>
+    <script src="{% static 'js/indexKdc.js' %}"></script>
+  </body>
+</html>
