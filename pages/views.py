@@ -45,8 +45,3 @@ async def kbg(request):
 @api_view(["GET"])
 async def archive(request):
     return await sync_to_async(render)(request, "pages/data-archive.html")
-
-
-@api_view(["GET"])
-async def datapage(request):
-    return await sync_to_async(render)(request, "pages/data-page.html")

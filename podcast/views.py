@@ -14,12 +14,6 @@ class Podcasts(ListAPIView):
     serializer_class = PodcastsSerializer
     paginate_by = 10
 
-    # async def post(self, request, *args, **kwargs):
-    #     return await sync_to_async(self.list)(request, *args, **kwargs)
-
-    # async def get(self, request, *args, **kwargs):
-    #     return await sync_to_async(render)(request, "pages/blog.html")
-
     def post(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
 
@@ -42,13 +36,3 @@ class PodcastView(RetrieveAPIView):
 # @sync_to_async
 async def get_template(request):
     return await sync_to_async(render)(request, "podcasts.html")
-
-
-# @sync_to_async
-# def show_post(request, slug):
-#     if slug is not None:
-#         result = aget_object_or_404(Podcast.objects.published(), slug=slug)
-#         return render(request, "pages/blog_single.html", context={"post": result})
-
-#     else:
-#         return

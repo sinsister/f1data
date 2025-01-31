@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     # Local apps
     "auth.apps.AuthConfig",
     "accounts.apps.AccountsConfig",
-    "blog.apps.BlogConfig",
     "pages",
     "ticket.apps.TicketConfig",
     "fastf1_app.apps.Fastf1Config",

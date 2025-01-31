@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import home, about_us, kdl, kdc, rules, login, register, kbg, archive, datapage
+from .views import home, about_us, kdl, kdc, rules, login, register, kbg, archive
 
 urlpatterns = [
     path("", home),
@@ -12,5 +12,4 @@ urlpatterns = [
     path("register", register),
     path("drivers-quality", kbg),
     path("data-archive", archive),
-    path("data-page", datapage),
 ]
