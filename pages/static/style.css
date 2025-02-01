@@ -4,7 +4,12 @@ html {
 }
 
 body {
-  background: linear-gradient(305deg, rgba(36, 9, 55, 1) 0%, rgba(18, 39, 54, 1) 50%, rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(
+    305deg,
+    rgba(36, 9, 55, 1) 0%,
+    rgba(18, 39, 54, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 
 body::-webkit-scrollbar {
@@ -30,65 +35,71 @@ body::-webkit-scrollbar-thumb:hover {
   background-color: rgba(20, 6, 6, 0.555);
   display: none;
 }
-
-.loader {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background: linear-gradient(77.28deg,
-      rgba(82, 225, 226, 1) 2.24%,
-      rgba(157, 77, 196, 1) 104.45%);
-  animation: animate 0.5s linear infinite;
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-
-.loader span {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: linear-gradient(77.28deg,
-      rgba(82, 225, 226, 1) 2.24%,
-      rgba(157, 77, 196, 1) 104.45%);
-  animation: animate 0.5s linear infinite;
-}
-
-.loader span:nth-child(1) {
-  filter: blur(5px);
-}
-
-.loader span:nth-child(2) {
-  filter: blur(10px);
-}
-
-.loader span:nth-child(3) {
-  filter: blur(25px);
-}
-
-.loader span:nth-child(4) {
-  filter: blur(50px);
-}
-
-.loader::after {
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  right: 3px;
-  bottom: 3px;
-  background-image: url("./imgs/wheel.jpg");
-  border-radius: 50%;
-  background-size: cover;
-}
-
-@keyframes animate {
-  0% {
-    transform: rotate(0deg);
+@keyframes loader_5191 {
+  from {
+    opacity: 0;
   }
 
-  100% {
-    transform: rotate(360deg);
+  to {
+    opacity: 1;
   }
+}
+
+.square {
+  background: #ddd;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -5px;
+  margin-left: -5px;
+}
+
+#sq1 {
+  margin-top: -25px;
+  margin-left: -25px;
+  animation: loader_5191 675ms ease-in-out 0s infinite alternate;
+}
+
+#sq2 {
+  margin-top: -25px;
+  animation: loader_5191 675ms ease-in-out 75ms infinite alternate;
+}
+
+#sq3 {
+  margin-top: -25px;
+  margin-left: 15px;
+  animation: loader_5191 675ms ease-in-out 150ms infinite;
+}
+
+#sq4 {
+  margin-left: -25px;
+  animation: loader_5191 675ms ease-in-out 225ms infinite;
+}
+
+#sq5 {
+  animation: loader_5191 675ms ease-in-out 300ms infinite;
+}
+
+#sq6 {
+  margin-left: 15px;
+  animation: loader_5191 675ms ease-in-out 375ms infinite;
+}
+
+#sq7 {
+  margin-top: 15px;
+  margin-left: -25px;
+  animation: loader_5191 675ms ease-in-out 450ms infinite;
+}
+
+#sq8 {
+  margin-top: 15px;
+  animation: loader_5191 675ms ease-in-out 525ms infinite;
+}
+
+#sq9 {
+  margin-top: 15px;
+  margin-left: 15px;
+  animation: loader_5191 675ms ease-in-out 600ms infinite;
 }

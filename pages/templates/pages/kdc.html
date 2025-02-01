@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="{% static 'tailwind/style.css' %}" />
     <link rel="stylesheet" href="{% static 'footerApp.css' %}" />
     <link rel="stylesheet" href="{% static 'style.css' %}" />
-    <link rel="shortcut icon" href="{% static 'img/icons/icon.jpg' %}" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="{% static 'img/icons/icon.jpg' %}"
+      type="image/x-icon"
+    />
   </head>
 
   <body class="text-slate-300 overflow-x-hidden">
@@ -24,12 +28,16 @@
       </div>
     </div>
     <header-app></header-app>
-    <section class="contKdl mb-40 max-xl:flex-col-reverse w-full flex text-center justify-center">
+    <section
+      class="contKdl mb-40 max-xl:flex-col-reverse w-full flex text-center justify-center"
+    >
       <div class="container mb-40 infDr w-full flex">
         <div class="container flex-col items-center flex">
           <div class="drivSerach w-full">
             <div class="SearchForDrivers">
-              <div class="lstSearch flex max-lg:items-center max-lg:flex-col max-lg:gap-2 justify-around">
+              <div
+                class="lstSearch flex max-lg:items-center max-lg:flex-col max-lg:gap-2 justify-around"
+              >
                 <div class="chsRnf flex flex-col">
                   <div class="rightZb flex gap-4">
                     <div
@@ -57,32 +65,39 @@
                     <div
                       class="optSelsY flex-col max-sm:w-32 max-lg:flex-col z-0 opacity-0 transition ease-in-out flex w-56 max-lg:h-40 max-lg:overflow-scroll flex-col"
                     >
-                    <span
-                        onclick="KdcClass.selectValue(event,'year','typeTitY','isSetYear')" class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
+                      <span
+                        onclick="KdcClass.selectValue(event,'year','typeTitY','isSetYear','')"
+                        class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
                         >2024</span
                       >
                       <span
-                      onclick="KdcClass.selectValue(event,'year','typeTitY','isSetYear')" class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
+                        onclick="KdcClass.selectValue(event,'year','typeTitY','isSetYear','')"
+                        class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
                         >2023</span
                       >
                       <span
-                       onclick="KdcClass.selectValue(event,'year','typeTitY','isSetYear')" class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
+                        onclick="KdcClass.selectValue(event,'year','typeTitY','isSetYear','')"
+                        class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
                         >2022</span
                       >
                       <span
-                       onclick="KdcClass.selectValue(event,'year','typeTitY','isSetYear')" class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
+                        onclick="KdcClass.selectValue(event,'year','typeTitY','isSetYear','')"
+                        class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
                         >2021</span
                       >
                       <span
-                      onclick="KdcClass.selectValue(event,'year','typeTitY','isSetYear')" class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
+                        onclick="KdcClass.selectValue(event,'year','typeTitY','isSetYear','')"
+                        class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
                         >2020</span
                       >
                       <span
-                       onclick="KdcClass.selectValue(event,'year','typeTitY','isSetYear')" class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
+                        onclick="KdcClass.selectValue(event,'year','typeTitY','isSetYear','')"
+                        class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
                         >2019</span
                       >
                       <span
-                       onclick="KdcClass.selectValue(event,'year','typeTitY','isSetYear')" class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
+                        onclick="KdcClass.selectValue(event,'year','typeTitY','isSetYear','')"
+                        class="optSlDriversY p-2 text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900"
                         >2018</span
                       >
                     </div>
@@ -106,9 +121,9 @@
                       class="optSelsC max-sm:w-32 opacity-0 z-0 transition ease-in-out flex w-56 flex-col"
                     ></div>
                   </div>
-                  <button class="btnSearch hover:transition" disabled>
+                  <button class="btnSearch hover:transition">
                     <div
-                      onclick="searchDrvs()"
+                      onclick="KdcClass.searchDrivers()"
                       class="chooseRng max-sm:w-32 rounded-md flex w-56 hover:bg-slate-950 transition ease-out hover:border-gray-300 h-10 items-center bg-gray-800 border-sloid border-2 border-slate-500 justify-around"
                     >
                       <span class="">جست و جو ...</span>
@@ -125,12 +140,22 @@
             <div class="topDrView text-large">
               <h1 class="">لیست راننده ها</h1>
             </div>
-            <div
-              class="containerdrView  flex justify-center items-center h-50"
-            >
+            <div class="containerdrView flex justify-center items-center h-50">
               <span class="h-full items-center flex"
                 >لطفا اطلاعات را وارد کنید...</span
               >
+              <!-- From Uiverse.io by JkHuger -->
+              <div class="loader">
+                <div class="square" id="sq1"></div>
+                <div class="square" id="sq2"></div>
+                <div class="square" id="sq3"></div>
+                <div class="square" id="sq4"></div>
+                <div class="square" id="sq5"></div>
+                <div class="square" id="sq6"></div>
+                <div class="square" id="sq7"></div>
+                <div class="square" id="sq8"></div>
+                <div class="square" id="sq9"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -147,7 +172,9 @@
               <div
                 class="topRDr flex flex-col justify-center items-center gap-6"
               >
-                <div class="topRightDr max-sm:items-center max-sm:gap-16 gap-6 flex flex-col"></div>
+                <div
+                  class="topRightDr max-sm:items-center max-sm:gap-16 gap-6 flex flex-col"
+                ></div>
               </div>
             </div>
             <div class="leftiDr p-11">
@@ -181,7 +208,9 @@
               </div>
             </div>
           </div>
-          <div class="btmcntDrv max-sm:justify-center flex gap-4 max-sm:gap-0 max-sm:pl-0 pl-4">
+          <div
+            class="btmcntDrv max-sm:justify-center flex gap-4 max-sm:gap-0 max-sm:pl-0 pl-4"
+          >
             <div
               class="lapTimeDriver max-sm:w-12 w-1/5 border border-solid border-slate-700 rounded-md flex flex-col"
             >
@@ -240,11 +269,11 @@
     <footer-app></footer-app>
     <script
       type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+      src="https:unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
     ></script>
     <script
       nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+      src="https:unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
     <script type="module" src="{% static 'js/headerComponent.js' %}"></script>
     <script type="module" src="{% static 'js/footerComponent.js' %}"></script>

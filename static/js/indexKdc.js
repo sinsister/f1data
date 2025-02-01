@@ -120,7 +120,9 @@ class KdcClass{
     this.year = undefined
     this.zone = undefined
     this.grandPray = undefined
+    this.grandPraySend = undefined
     this.raceInfo = undefined
+    this.raceInfoSend = undefined
   }
   static clickOnBtn(clickHnd,e){
     this[clickHnd] = !this[clickHnd]
@@ -134,11 +136,18 @@ class KdcClass{
       this.showOptionValues(clickHnd)
     }
   }
-  static selectValue(ev,valueSet,changeHead,isSet){
+  static selectValue(ev,valueSet,changeHead,isSet,grpSend){
     this[valueSet] = ev.target.innerText
     this[isSet] = false
     this.showOptionValues(isSet)
-      document.querySelector(`.${changeHead}`).innerText = this[valueSet]
+    document.querySelector(`.${changeHead}`).innerText = this[valueSet]
+    if(grpSend == 'yes'){
+      const grpS = ev.target.getAttribute('noTrGp')
+      this.grandPraySend = grpS
+    }else{
+      const raceS = ev.target.getAttribute('noTrRc')
+      this.raceInfoSend = raceS
+    }
   }
   static showOptionValues(showOpt){
     if(this[showOpt]&&showOpt == "isSetYear"){
@@ -155,7 +164,7 @@ class KdcClass{
           const gps = await response.Country
           await gps.forEach((f) => {
                   optSelsD.innerHTML += `
-                <span onclick=KdcClass.selectValue(event,'grandPray','drvTitGr','isSetGr') class=" optSlYf p-2 max-sm:text-xs text-lg flex justify-center
+                <span noTrGp='${f.t}' onclick=KdcClass.selectValue(event,'grandPray','drvTitGr','isSetGr','yes') class=" optSlYf p-2 max-sm:text-xs text-lg flex justify-center
                 bg-slate-950 text-zinc-300 transition ease-in-out
                 hover:bg-zinc-200 hover:text-slate-900 ${f.t == "Pre-Season Test"?"hidden":f.t =="Pre-Season Test 2"?"hidden":""}">${countryTr[f.tr] !== undefined ? countryTr[f.tr] : f.t}</span>      
                 `;
@@ -178,7 +187,7 @@ class KdcClass{
           optSl.classList = "optSelsC max-sm:w-32 transition ease-in-out flex w-56 flex-col"
           responseRc.forEach((f) => {
             optSl.innerHTML += `
-              <span onclick=KdcClass.selectValue(event,'raceInfo','typeTit','isSetRace') raceOf=${f} class="optSlDrivers p-2 max-sm:text-xs text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900">${typeTr[f]}</span>
+              <span noTrRc='${f}' onclick=KdcClass.selectValue(event,'raceInfo','typeTit','isSetRace','') raceOf=${f} class="optSlDrivers p-2 max-sm:text-xs text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900">${typeTr[f]}</span>
                 `;
                 });
         })
@@ -188,6 +197,15 @@ class KdcClass{
         optSl.innerHTML = ''
         optSl.classList = 'optSelsC max-sm:w-32 opacity-0 z-0 transition ease-in-out flex w-56 flex-col'
       }
+  }
+  static searchDrivers(){
+    if(this.raceInfo !== undefined){
+      fetch(`api/v1/fastf1/drivers?year=${this.year}&gp=${this.grandPraySend}&identifire=${this.raceInfoSend.split("_").join(" ")}`)
+    .then(res=>{res.json()})
+    .then(response=>{
+      console.log(response);
+    })
+    }
   }
 }
 // let isYearTp = true;
@@ -239,7 +257,7 @@ class KdcClass{
 //       optSelsD.innerHTML += `
 //     <span cntValue = ${f.t} class=" optSlYf p-2 max-sm:text-xs text-lg flex justify-center
 //     bg-slate-950 text-zinc-300 transition ease-in-out
-//     hover:bg-zinc-200 hover:text-slate-900" noTr="${f.t}">${countryTr[f.tr] !== undefined ? countryTr[f.tr] : f.t
+//     hover:bg-zinc-200 hover:text-slate-900" noTrGp="${f.t}">${countryTr[f.tr] !== undefined ? countryTr[f.tr] : f.t
 //         }</span>      
 //     `;
 //     });
@@ -302,7 +320,7 @@ class KdcClass{
 //   optDr.forEach((f) => {
 //     f.addEventListener("click", async(z) => {
 //       const optTit = document.querySelector(".drvTitGr");
-//       optValDr = z.target.getAttribute("noTr");
+//       optValDr = z.target.getAttribute("noTrGp");
 //       optTit.innerText = z.target.innerText;
 //       chooseTypeD("optSelsD", "optAngS");
 //       await fetch(`api/v1/fastf1/session?year=${optValY}&country=${optValDr}`)
