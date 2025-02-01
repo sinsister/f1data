@@ -198,12 +198,94 @@ class KdcClass{
         optSl.classList = 'optSelsC max-sm:w-32 opacity-0 z-0 transition ease-in-out flex w-56 flex-col'
       }
   }
-  static searchDrivers(){
+  static async searchDrivers(){
     if(this.raceInfo !== undefined){
-      fetch(`api/v1/fastf1/drivers?year=${this.year}&gp=${this.grandPraySend}&identifire=${this.raceInfoSend.split("_").join(" ")}`)
-    .then(res=>{res.json()})
+      const bodyItems = document.querySelector(".containerdrView")
+      if(bodyItems.className[-1] == "grid-cols-3"){
+        bodyItems.classList = "containerdrView flex justify-center gap-10 items-center h-50"
+      }
+      bodyItems.innerHTML = `
+      <div class="loader ltr">
+                <div class="wrapper">
+                  <div class="circle"></div>
+                  <div class="line-1"></div>
+                  <div class="line-2"></div>
+                  <div class="line-3"></div>
+                  <div class="line-4"></div>
+                </div>
+              </div>
+              <div class="loader ltr">
+                <div class="wrapper">
+                  <div class="circle"></div>
+                  <div class="line-1"></div>
+                  <div class="line-2"></div>
+                  <div class="line-3"></div>
+                  <div class="line-4"></div>
+                </div>
+              </div>
+              <div class="loader ltr">
+                <div class="wrapper">
+                  <div class="circle"></div>
+                  <div class="line-1"></div>
+                  <div class="line-2"></div>
+                  <div class="line-3"></div>
+                  <div class="line-4"></div>
+                </div>
+              </div>
+              
+      `
+      await fetch(`api/v1/fastf1/drivers?year=${this.year}&gp=${this.grandPraySend}&identifire=${this.raceInfoSend.split("_").join(" ")}`)
+    .then(res=>{return res.json()})
     .then(response=>{
-      console.log(response);
+      bodyItems.innerHTML = ''
+      bodyItems.classList = 'containerdrView justify-center gap-10 items-center h-50 grid grid-cols-3'
+      response.forEach(res=>{
+        bodyItems.innerHTML += `
+        <div class="dvCntD rounded-md flex flex-col gap-2 bg-gray-800 w-64 h-80 rounded-xl cursor-pointer">
+               <div class="flex flex-col">
+                     <div class="p-4 rounded-t-md pb-8 border border-b-slate-400 border-b-solid items-center flex justify-around gap-4"
+                           style="background-color:#${res.colorTeam};">
+                            <img src=${res.image}
+                                   class="imgDrv w-16 rounded-full bg-slate-600 -xl h-full transition-all ease-in-out">
+                            <div
+                                  style=${isNaN(res.position)
+              ? "display:none"
+              : "background-color:#e5e7eb"
+            } class='colorTeam w-10 p-2 rounded flex text-center items-center justify-center bg-slate-300'>
+                                  <span class='rankDr flex text-center justify-center text-slate-950'>${Number(
+              res.position
+            )}</span>
+                            </div>
+                      </div>
+                      <div class='colorTeam p-2 rounded-b flex text-center items-center justify-center bg-slate-300'>
+                            <span class='rankDr text-slate-950 text-xl'>${driversTr[res.name] !== undefined
+              ? driversTr[res.name]
+              : res.name
+            }</span>
+                      </div>
+                </div>
+                <div class="mainDrO relative">
+                      <div class="mainCnDrv absolute"></div>
+                </div>
+                <div class="footDrO flex flex-col gap-4">
+                      <div class="flex flex-col items-center gap-2 ">
+                      <div class="topFoot flex items-center justify-around">
+                            <span class="text-gray-400 text-large">${teamTr[res.teamName]
+            }</span>
+                      </div>
+                      <div class="btmFoot flex justify-around">
+                      <span class="text-gray-400 text-md">${res.Abbreviation
+            }</span>
+                      </div>
+                      </div>
+                      <div class="btmFoot flex justify-center">
+                          <button number=${res.driver_code
+            } class="showInfBtn hover:bg-slate-300 hover:text-violet-700 transition ease-in-out w-40 h-10 bg-violet-700 rounded-md text-slate-300">نمایش اطلاعات</button>
+                      </div>
+                </div>
+          </div>
+        `
+      })
     })
     }
   }

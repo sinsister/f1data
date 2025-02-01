@@ -1,24 +1,23 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-a{
+a {
   color: #fbfbfb !important;
   text-decoration: none;
 }
 
-.archive-sec{
+.archive-sec {
   width: 100%;
   height: 100%;
 }
-  
-.archive-sec .sec-container{
-  padding: 30px;
 
+.archive-sec .sec-container {
+  padding: 30px;
 }
 
-.archive-sec .sec-container .cards{
+.archive-sec .sec-container .cards {
   width: 100%;
   height: 100%;
   display: flex;
@@ -27,14 +26,14 @@ a{
   justify-content: center;
 }
 
-.archive-sec .sec-container .cards .parent-cards{
+.archive-sec .sec-container .cards .parent-cards {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 80px;
 }
-  
-.sec-container .cards .parent-cards .card{
+
+.sec-container .cards .parent-cards .card {
   width: 280px;
   padding: 20px;
   display: flex;
@@ -46,18 +45,18 @@ a{
   border-radius: 19px;
 }
 
-.sec-container .cards .parent-cards .card .photo{
+.sec-container .cards .parent-cards .card .photo {
   width: fit-content;
   background: #162753;
   border-radius: 19px;
 }
 
-.sec-container .cards .parent-cards .card .photo img{
+.sec-container .cards .parent-cards .card .photo img {
   width: 100%;
   object-fit: cover;
 }
 
-.sec-container .cards .parent-cards .card .title-page{
+.sec-container .cards .parent-cards .card .title-page {
   width: 100%;
   text-align: right;
   color: #fbfbfb;
@@ -66,7 +65,7 @@ a{
   padding: 8px 5px 0px 0px;
 }
 
-.sec-container .cards .parent-cards .card .description{
+.sec-container .cards .parent-cards .card .description {
   color: #d3d3d3;
   font-size: 15px;
   line-height: 1.5;
@@ -75,17 +74,17 @@ a{
   font-weight: 500;
 }
 
-.sec-container .cards .parent-cards .card .get-page{
+.sec-container .cards .parent-cards .card .get-page {
   padding: 10px 12px;
   border-radius: 9px;
   background: #003581;
 }
 
-.sec-container .cards .card2{
+.sec-container .cards .card2 {
   margin-top: 40px;
 }
 
-.lists-info .containerdrView{
+.lists-info .containerdrView {
   width: 100%;
   height: 100%;
   display: flex;
@@ -95,7 +94,7 @@ a{
   margin-top: -178px;
 }
 
-.lists-info .containerdrView img{
+.lists-info .containerdrView img {
   width: 100%;
   height: 100%;
   display: flex;
@@ -103,7 +102,7 @@ a{
   align-items: center;
 }
 
-.lists-info .info-pic{
+.lists-info .info-pic {
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -111,7 +110,7 @@ a{
   flex-wrap: wrap;
 }
 
-.lists-info .info-pic div{
+.lists-info .info-pic div {
   width: 50%;
   display: flex;
   justify-content: center;
@@ -123,5 +122,3 @@ a{
   display: flex;
   justify-content: flex-start;
 } */
-
-

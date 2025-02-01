@@ -4,7 +4,12 @@ html {
 }
 
 body {
-  background: linear-gradient(305deg, rgba(36, 9, 55, 1) 0%, rgba(18, 39, 54, 1) 50%, rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(
+    305deg,
+    rgba(36, 9, 55, 1) 0%,
+    rgba(18, 39, 54, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 
 body::-webkit-scrollbar {
@@ -12,7 +17,7 @@ body::-webkit-scrollbar {
   background-color: #000000;
   overflow-x: hidden;
 }
-li{
+li {
   list-style: none;
 }
 body::-webkit-scrollbar-thumb {
@@ -33,85 +38,96 @@ body::-webkit-scrollbar-thumb:hover {
   background-color: rgba(20, 6, 6, 0.555);
   display: none;
 }
-
+/* From Uiverse.io by Nawsome */
 .loader {
   position: relative;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background: linear-gradient(77.28deg,
-      rgba(82, 225, 226, 1) 2.24%,
-      rgba(157, 77, 196, 1) 104.45%);
-  animation: animate 0.5s linear infinite;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  width: 240px;
+  height: 130px;
+  margin-bottom: 10px;
+  border: 1px solid #1a1a24;
+  padding: 15px;
+  background-color: #111b37;
+  overflow: hidden;
 }
 
-.loader span {
+.loader:after {
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    110deg,
+    rgba(227, 227, 227, 0) 0%,
+    rgba(227, 227, 227, 0) 40%,
+    rgba(227, 227, 227, 0.5) 50%,
+    rgba(227, 227, 227, 0) 60%,
+    rgba(227, 227, 227, 0) 100%
+  );
+  animation: gradient-animation_2 1.2s linear infinite;
+}
+
+.loader .wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.loader .wrapper > div {
+  background-color: #313642;
+}
+
+.loader .circle {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background: linear-gradient(77.28deg,
-      rgba(82, 225, 226, 1) 2.24%,
-      rgba(157, 77, 196, 1) 104.45%);
-  animation: animate 0.5s linear infinite;
 }
 
-.loader span:nth-child(1) {
-  filter: blur(5px);
+.loader .button {
+  display: inline-block;
+  height: 32px;
+  width: 75px;
 }
 
-.loader span:nth-child(2) {
-  filter: blur(10px);
-}
-
-.loader span:nth-child(3) {
-  filter: blur(25px);
-}
-
-.loader span:nth-child(4) {
-  filter: blur(50px);
-}
-
-.loader::after {
-  content: "";
+.loader .line-1 {
   position: absolute;
-  top: 3px;
-  left: 3px;
-  right: 3px;
-  bottom: 3px;
-  background-image: url("./imgs/wheel.jpg");
-  border-radius: 50%;
-  background-size: cover;
+  top: 11px;
+  left: 58px;
+  height: 10px;
+  width: 100px;
 }
 
-@keyframes animate {
+.loader .line-2 {
+  position: absolute;
+  top: 34px;
+  left: 58px;
+  height: 10px;
+  width: 150px;
+}
+
+.loader .line-3 {
+  position: absolute;
+  top: 57px;
+  left: 0px;
+  height: 10px;
+  width: 100%;
+}
+
+.loader .line-4 {
+  position: absolute;
+  top: 80px;
+  left: 0px;
+  height: 10px;
+  width: 92%;
+}
+
+@keyframes gradient-animation_2 {
   0% {
-    transform: rotate(0deg);
+    transform: translateX(-100%);
   }
 
   100% {
-    transform: rotate(360deg);
+    transform: translateX(100%);
   }
-}
-
-.turnAr {
-  transform: rotate(180deg);
-  animation-iteration-count: infinite;
-}
-
-.searchLoading {
-  border-radius: 50%;
-  background-image: url('./imgs/loading.png');
-  background-repeat: no-repeat;
-  animation: animate 0.3s linear infinite;
-}
-
-.backDrShow {
-  background-color: rgba(2, 1, 0, 0.63);
-  position: fixed;
-  width: 1800px;
-  height: 850px;
-  z-index: 20;
 }
