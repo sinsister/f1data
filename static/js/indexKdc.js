@@ -71,6 +71,7 @@ const driversTr = {
   Kevin_Magnussen: "کوین مگنوسن",
 };
 const countryTr = {
+  "70th_Anniversary_Grand_Prix":"گرند پری سالگرد هفتادمین مسابقه اتوموبیل رانی",
   Bahrain_Grand_Prix: "گرندپری بحرین",
   Saudi_Arabian_Grand_Prix: "گرندپری عربستان",
   Australian_Grand_Prix: "گرندپری استرالیا ",
@@ -79,6 +80,9 @@ const countryTr = {
   Miami_Grand_Prix: "گرندپری میامی",
   Monaco_Grand_Prix: "گرندپری موناکو",
   Spanish_Grand_Prix: "گرندپری اسپانیا",
+  German_Grand_Prix:"گرند پری آلمان",
+  Mexican_Grand_Prix:"گرند پری مکزیک",
+  Brazilian_Grand_Prix:"گرند پری برزیل",
   Canadian_Grand_Prix: "گرندپری کانادا",
   Austrian_Grand_Prix: "گرندپری اتریش",
   British_Grand_Prix: "گرندپری بریتانیا",
@@ -119,7 +123,7 @@ class KdcClass{
   static clickOnBtn(clickHnd,e){
     this[clickHnd] = !this[clickHnd]
     this.showOptionValues(clickHnd)
-    if(this.year !== undefined&&clickHnd == "isSetZone"){
+    if(this.year !== undefined&&clickHnd == "isSetGr"){
       this[clickHnd] = !this[clickHnd]
       this.showOptionValues(clickHnd)
     }
@@ -128,13 +132,11 @@ class KdcClass{
       this.showOptionValues(clickHnd)
     }
   }
-  static selectYearValue(ev,valueSet){
+  static selectValue(ev,valueSet,changeHead,isSet){
     this[valueSet] = ev.target.innerText
-    this.isSetYear = false
-    this.showOptionValues("isSetYear")
-    if(valueSet == "year"){
-      document.querySelector(".typeTitY").innerText = this.year
-    }
+    this[isSet] = false
+    this.showOptionValues(isSet)
+      document.querySelector(`.${changeHead}`).innerText = this[valueSet]
   }
   static showOptionValues(showOpt){
     if(this[showOpt]&&showOpt == "isSetYear"){
@@ -143,11 +145,26 @@ class KdcClass{
     else if(this[showOpt] == false&&showOpt == "isSetYear"){
       optSelsY.classList = "optSelsY flex-col max-sm:w-32 max-lg:flex-col z-0 opacity-0 transition ease-in-out flex w-56 max-lg:h-40 max-lg:overflow-scroll flex-col"
     }
-    else if(this[showOpt]&&showOpt=="isSetZone"){}
-      else if(this[showOpt]&&showOpt=="isSetZone"){
-        optSelsD.classList = "optSelsD max-sm:w-32 transition ease-in-out flex w-56 flex-col h-48 overflow-y-scroll"
+      else if(this[showOpt]&&showOpt=="isSetGr"){
+        if(optSelsD.innerHTML == ''){
+          fetch(`api/v1/fastf1/session/gp?year=${this.year}`)
+        .then(res=>{return res.json()})
+        .then(async(response)=>{
+          const gps = await response.Country
+          await gps.forEach((f) => {
+                  optSelsD.innerHTML += `
+                <span onclick=KdcClass.selectValue(event,'grandPray','drvTitGr','isSetGr') class=" optSlYf p-2 max-sm:text-xs text-lg flex justify-center
+                bg-slate-950 text-zinc-300 transition ease-in-out
+                hover:bg-zinc-200 hover:text-slate-900 ${f.t == "Pre-Season Test"?"hidden":f.t =="Pre-Season Test 2"?"hidden":""}">${countryTr[f.tr] !== undefined ? countryTr[f.tr] : f.t}</span>      
+                `;
+                })
+          optSelsD.classList = "optSelsD max-sm:w-32 transition ease-in-out flex w-56 flex-col h-48 overflow-y-scroll"
+        })
+        }
+        
       }
-      else if(this[showOpt] == false&&showOpt=="isSetZone"){
+      else if(this[showOpt] == false&&showOpt=="isSetGr"){
+        optSelsD.innerHTML = ''
         optSelsD.classList = "max-sm:w-32 z-10 opacity-0 transition ease-in-out flex w-56 h-20 overflow-y-scroll flex-col"
       }
   }
