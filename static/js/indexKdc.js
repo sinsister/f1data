@@ -111,14 +111,16 @@ const countryTr = {
 const optSelsY = document.querySelector(".optSelsY")
 const optSlDriversY = document.querySelector(".optSlDriversY")
 const optSelsD = document.querySelector(".optSelsD");
+    const optSl = document.querySelector(".optSelsC");
 class KdcClass{
   constructor(_year){
     this.isSetYear = false
-    this.isSetZone = false
+    this.isSetRace = false
     this.isSetGr = false
     this.year = undefined
     this.zone = undefined
     this.grandPray = undefined
+    this.raceInfo = undefined
   }
   static clickOnBtn(clickHnd,e){
     this[clickHnd] = !this[clickHnd]
@@ -166,6 +168,25 @@ class KdcClass{
       else if(this[showOpt] == false&&showOpt=="isSetGr"){
         optSelsD.innerHTML = ''
         optSelsD.classList = "max-sm:w-32 z-10 opacity-0 transition ease-in-out flex w-56 h-20 overflow-y-scroll flex-col"
+      }
+      else if(this[showOpt]&&showOpt=="isSetRace"){
+        if(this.grandPray !==undefined){
+          fetch(`api/v1/fastf1/session?year=${this.year}&country=${this.grandPray}`)
+        .then(res=>{return res.json()})
+        .then(async(response)=>{
+          const responseRc = response.sessions
+          optSl.classList = "optSelsC max-sm:w-32 transition ease-in-out flex w-56 flex-col"
+          responseRc.forEach((f) => {
+            optSl.innerHTML += `
+              <span onclick=KdcClass.selectValue(event,'raceInfo','typeTit','isSetRace') raceOf=${f} class="optSlDrivers p-2 max-sm:text-xs text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900">${typeTr[f]}</span>
+                `;
+                });
+        })
+        }
+      }
+      else if(this[showOpt]==false&&showOpt=="isSetRace"){
+        optSl.innerHTML = ''
+        optSl.classList = 'optSelsC max-sm:w-32 opacity-0 z-0 transition ease-in-out flex w-56 flex-col'
       }
   }
 }
