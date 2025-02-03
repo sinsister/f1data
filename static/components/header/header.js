@@ -112,46 +112,6 @@ class headerCr extends HTMLElement {
             super();
             this.attachShadow({ mode: "open" });
             this.shadowRoot.appendChild(headerApp.content.cloneNode(true));
-            mouseMove(this.shadowRoot.querySelectorAll(".headerOpt"), this.shadowRoot.querySelector(".kdlOpt"), this.shadowRoot.querySelector(".angleS"))
-            toggleClick(this.shadowRoot.querySelector("#responsiveHeader"), this.shadowRoot.querySelector(".toggleHeader"),)
       }
-}
-function mouseMove(headerOpt, kdlOpt, angleS) {
-      headerOpt.forEach((headerS)=>{
-            headerS.addEventListener("mousemove", () => {
-                  kdlOpt.classList.add("opacity-1")
-                  kdlOpt.classList.remove("opacity-0")
-                  angleS.classList.add('angleTurn')
-                  angleS.classList.remove('angleS')
-            })
-            headerS.addEventListener("mouseout", () => {
-                  kdlOpt.classList.add("opacity-0")
-                  kdlOpt.classList.remove("opacity-1")
-                  angleS.classList.remove('angleTurn')
-                  angleS.classList.add('angleS')
-            })
-      })
-      
-}
-let isMenu = false
-function toggleClick(headerApp, iconTgl) {
-      iconTgl.addEventListener("click", () => {
-            if (isMenu) {
-                  isMenu = false
-            }
-            else {
-                  isMenu = true
-            }
-            if (isMenu == true) {
-                  headerApp.classList.add("responsiveHeaderAc")
-                  headerApp.classList.remove("responsiveHeader")
-                  iconTgl.setAttribute("name", "close-outline")
-            }
-            else if (isMenu == false) {
-                  headerApp.classList.remove("responsiveHeaderAc")
-                  headerApp.classList.add("responsiveHeader")
-                  iconTgl.setAttribute("name", "menu-outline")
-            }
-      })
 }
 export { headerCr };
