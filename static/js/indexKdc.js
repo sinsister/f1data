@@ -124,19 +124,19 @@ class KdcClass{
     this.raceInfo = undefined
     this.raceInfoSend = undefined
   }
-  static clickOnBtn(clickHnd,e){
+  static clickOnBtn(clickHnd,dataType){
     this[clickHnd] = !this[clickHnd]
-    this.showOptionValues(clickHnd)
+    this.showOptionValues(clickHnd,dataType)
     if(this.year !== undefined&&clickHnd == "isSetGr"){
       this[clickHnd] = !this[clickHnd]
-      this.showOptionValues(clickHnd)
+      this.showOptionValues(clickHnd,dataType)
     }
     else if(this.grandPray !== undefined&&clickHnd == "isSetGr"){
       this[clickHnd] = !this[clickHnd]
-      this.showOptionValues(clickHnd)
+      this.showOptionValues(clickHnd,dataType)
     }
   }
-  static selectValue(ev,valueSet,changeHead,isSet,grpSend){
+  static selectValue(ev,valueSet,changeHead,isSet,grpSend,dataType){
     this[valueSet] = ev.target.innerText
     this[isSet] = false
     this.showOptionValues(isSet)
@@ -149,7 +149,7 @@ class KdcClass{
       this.raceInfoSend = raceS
     }
   }
-  static showOptionValues(showOpt){
+  static showOptionValues(showOpt,dataType){
     if(this[showOpt]&&showOpt == "isSetYear"){
       optSelsY.classList = "optSelsY flex-col max-sm:w-32 z-0 transition ease-in-out flex w-56 max-lg:flex-col max-lg:h-40 max-lg:overflow-scroll"
     }
@@ -158,19 +158,36 @@ class KdcClass{
     }
       else if(this[showOpt]&&showOpt=="isSetGr"){
         if(optSelsD.innerHTML == ''){
-          fetch(`api/v1/fastf1/session/gp?year=${this.year}`)
+          if(dataType == "kdc"){
+            fetch(`api/v1/fastf1/session/gp?year=${this.year}`)
         .then(res=>{return res.json()})
         .then(async(response)=>{
           const gps = await response.Country
           await gps.forEach((f) => {
                   optSelsD.innerHTML += `
-                <span noTrGp='${f.t}' onclick=KdcClass.selectValue(event,'grandPray','drvTitGr','isSetGr','yes') class=" optSlYf p-2 max-sm:text-xs text-lg flex justify-center
+                <span noTrGp='${f.t}' onclick=KdcClass.selectValue(event,'grandPray','drvTitGr','isSetGr','yes','kdc') class=" optSlYf p-2 max-sm:text-xs text-lg flex justify-center
                 bg-slate-950 text-zinc-300 transition ease-in-out
                 hover:bg-zinc-200 hover:text-slate-900 ${f.t == "Pre-Season Test"?"hidden":f.t =="Pre-Season Test 2"?"hidden":""}">${countryTr[f.tr] !== undefined ? countryTr[f.tr] : f.t}</span>      
                 `;
                 })
           optSelsD.classList = "optSelsD max-sm:w-32 transition ease-in-out flex w-56 flex-col h-48 overflow-y-scroll"
         })
+          }
+          else if(dataType == "kdl"){
+            fetch(`api/v1/fastf1/session/gp?year=2024`)
+        .then(res=>{return res.json()})
+        .then(async(response)=>{
+          const gps = await response.Country
+          await gps.forEach((f) => {
+                  optSelsD.innerHTML += `
+                <span noTrGp='${f.t}' onclick=KdcClass.selectValue(event,'grandPray','drvTit','isSetGr','yes','kdc') class=" optSlYf p-2 max-sm:text-xs text-lg flex justify-center
+                bg-slate-950 text-zinc-300 transition ease-in-out
+                hover:bg-zinc-200 hover:text-slate-900 ${f.t == "Pre-Season Test"?"hidden":f.t =="Pre-Season Test 2"?"hidden":""}">${countryTr[f.tr] !== undefined ? countryTr[f.tr] : f.t}</span>      
+                `;
+                })
+          optSelsD.classList = "optSelsD max-sm:w-32 transition ease-in-out flex w-56 flex-col h-48 overflow-y-scroll"
+        })
+          }
         }
         
       }
@@ -180,17 +197,26 @@ class KdcClass{
       }
       else if(this[showOpt]&&showOpt=="isSetRace"){
         if(this.grandPray !==undefined){
-          fetch(`api/v1/fastf1/session?year=${this.year}&country=${this.grandPray}`)
+          if(dataType == "kdc"){
+            fetch(`api/v1/fastf1/session?year=2024&country=${this.grandPray}`)
         .then(res=>{return res.json()})
         .then(async(response)=>{
           const responseRc = response.sessions
           optSl.classList = "optSelsC max-sm:w-32 transition ease-in-out flex w-56 flex-col"
           responseRc.forEach((f) => {
             optSl.innerHTML += `
-              <span noTrRc='${f}' onclick=KdcClass.selectValue(event,'raceInfo','typeTit','isSetRace','') raceOf=${f} class="optSlDrivers p-2 max-sm:text-xs text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900">${typeTr[f]}</span>
+              <span noTrRc='${f}' onclick=KdcClass.selectValue(event,'raceInfo','typeTit','isSetRace','',"kdc") raceOf=${f} class="optSlDrivers p-2 max-sm:text-xs text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900">${typeTr[f]}</span>
                 `;
                 });
         })
+          }
+          else if(dataType == "kdl"){
+            optSl.classList = "optSelsC max-sm:w-32 transition ease-in-out flex w-56 flex-col"
+            optSl.innerHTML += `
+              <span onclick=KdcClass.selectValue(event,'raceInfo','typeTit','isSetRace','',"kdc") class="optSlDrivers p-2 max-sm:text-xs text-lg flex justify-center bg-slate-950 text-zinc-300 transition ease-in-out hover:bg-zinc-200 hover:text-slate-900">مسابقه</span>
+                `;
+                
+          }
         }
       }
       else if(this[showOpt]==false&&showOpt=="isSetRace"){
@@ -198,9 +224,10 @@ class KdcClass{
         optSl.classList = 'optSelsC max-sm:w-32 opacity-0 z-0 transition ease-in-out flex w-56 flex-col'
       }
   }
-  static async searchDrivers(){
+  static async searchDrivers(dataType){
     if(this.raceInfo !== undefined){
-      const bodyItems = document.querySelector(".containerdrView")
+      if(dataType == "kdc"){
+        const bodyItems = document.querySelector(".containerdrView")
       if(bodyItems.className[-1] == "grid-cols-3"){
         bodyItems.classList = "containerdrView flex justify-center gap-10 items-center h-50"
       }
@@ -287,6 +314,96 @@ class KdcClass{
         `
       })
     })
+      }
+      else if(dataType == "kdl"){
+        const bodyItems = document.querySelector(".containerdrView")
+      if(bodyItems.className[-1] == "grid-cols-3"){
+        bodyItems.classList = "containerdrView flex justify-center gap-10 items-center h-50"
+      }
+      bodyItems.innerHTML = `
+      <div class="loader ltr">
+                <div class="wrapper">
+                  <div class="circle"></div>
+                  <div class="line-1"></div>
+                  <div class="line-2"></div>
+                  <div class="line-3"></div>
+                  <div class="line-4"></div>
+                </div>
+              </div>
+              <div class="loader ltr">
+                <div class="wrapper">
+                  <div class="circle"></div>
+                  <div class="line-1"></div>
+                  <div class="line-2"></div>
+                  <div class="line-3"></div>
+                  <div class="line-4"></div>
+                </div>
+              </div>
+              <div class="loader ltr">
+                <div class="wrapper">
+                  <div class="circle"></div>
+                  <div class="line-1"></div>
+                  <div class="line-2"></div>
+                  <div class="line-3"></div>
+                  <div class="line-4"></div>
+                </div>
+              </div>
+              
+      `
+      await fetch(`api/v1/fastf1/drivers?kdl=true&gp=${this.grandPraySend}`)
+    .then(res=>{return res.json()})
+    .then(response=>{
+      bodyItems.innerHTML = ''
+      bodyItems.classList = 'containerdrView justify-center gap-10 items-center h-50 grid grid-cols-3'
+      response.forEach(res=>{
+        bodyItems.innerHTML += `
+        <div class="dvCntD rounded-md flex flex-col gap-2 bg-gray-800 w-64 h-80 rounded-xl cursor-pointer">
+               <div class="flex flex-col">
+                     <div class="p-4 rounded-t-md pb-8 border border-b-slate-400 border-b-solid items-center flex justify-around gap-4"
+                           style="background-color:#${res.colorTeam};">
+                            <img src=${res.image}
+                                   class="imgDrv w-16 rounded-full bg-slate-600 -xl h-full transition-all ease-in-out">
+                            <div
+                                  style=${isNaN(res.position)
+              ? "display:none"
+              : "background-color:#e5e7eb"
+            } class='colorTeam w-10 p-2 rounded flex text-center items-center justify-center bg-slate-300'>
+                                  <span class='rankDr flex text-center justify-center text-slate-950'>${Number(
+              res.position
+            )}</span>
+                            </div>
+                      </div>
+                      <div class='colorTeam p-2 rounded-b flex text-center items-center justify-center bg-slate-300'>
+                            <span class='rankDr text-slate-950 text-xl'>${driversTr[res.name] !== undefined
+              ? driversTr[res.name]
+              : res.name
+            }</span>
+                      </div>
+                </div>
+                <div class="mainDrO relative">
+                      <div class="mainCnDrv absolute"></div>
+                </div>
+                <div class="footDrO flex flex-col gap-4">
+                      <div class="flex flex-col items-center gap-2 ">
+                      <div class="topFoot flex items-center justify-around">
+                            <span class="text-gray-400 text-large">${teamTr[res.teamName]
+            }</span>
+                      </div>
+                      <div class="btmFoot flex justify-around">
+                      <span class="text-gray-400 text-md">${res.Abbreviation
+            }</span>
+                      </div>
+                      </div>
+                      <div class="btmFoot flex justify-center">
+                          <button number=${res.driver_code
+            } class="showInfBtn hover:bg-slate-300 hover:text-violet-700 transition ease-in-out w-40 h-10 bg-violet-700 rounded-md text-slate-300">نمایش اطلاعات</button>
+                      </div>
+                </div>
+          </div>
+        `
+      })
+    })
+      }
     }
   }
 }
